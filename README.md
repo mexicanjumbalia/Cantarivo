@@ -17,21 +17,9 @@ Driver Companion will accept only audio assets that are explicitly dedicated und
 
 The catalog is currently empty by design. Any future track must be listed in [`content/music-catalog.json`](content/music-catalog.json), pass the automated guard, and be recorded in [`NOTICE.md`](NOTICE.md). Read the full [Open Content Policy](docs/OPEN_CONTENT_POLICY.md) before proposing an asset.
 
-## Run locally
+## Explore the live site
 
-Use a current browser. Microphone access requires `localhost` or HTTPS.
-
-```bash
-npm start
-```
-
-Or, if Python is installed:
-
-```bash
-py -m http.server 4184
-```
-
-Open [http://localhost:4184](http://localhost:4184). Port **4184** keeps Driver Companion separate from another local app on port 4173.
+Driver Companion is available directly in a modern browser at [mexicanjumbalia.github.io/driver-companion](https://mexicanjumbalia.github.io/driver-companion/). No download, local setup, or special address is needed.
 
 ## What it demonstrates
 
