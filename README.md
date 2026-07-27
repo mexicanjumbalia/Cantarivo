@@ -53,7 +53,7 @@ The repository includes a GitHub Actions workflow ready to deploy this static de
 
 ## Project support
 
-[`donate.html`](donate.html) is a transparent, optional project-support page. It accepts no payment information and has no active donation link by default. The repository's native GitHub Sponsor button points to this page—not to a payment provider. Activate a funding destination only after following the [Donations and Sponsorship policy](docs/DONATIONS_AND_SPONSORSHIP.md). For project support, licensing, or collaboration inquiries, email [drivercompanionsuppteam1@gmail.com](mailto:drivercompanionsuppteam1@gmail.com).
+[`donate.html`](donate.html) is a transparent, optional project-support page. The repository's native GitHub Sponsor button and the page's support button both open the project's [GitHub Sponsors profile](https://github.com/sponsors/mexicanjumbalia) in a new tab; Driver Companion does not collect payment information. Read the [Donations and Sponsorship policy](docs/DONATIONS_AND_SPONSORSHIP.md) before changing the funding setup. For project support, licensing, or collaboration inquiries, email [drivercompanionsuppteam1@gmail.com](mailto:drivercompanionsuppteam1@gmail.com).
 
 ## Development checks
 

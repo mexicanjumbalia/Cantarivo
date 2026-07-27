@@ -1,10 +1,10 @@
 # Donations and sponsorship
 
-**Status: no payment destination is active. This policy is not tax, financial, or legal advice.**
+**Status: GitHub Sponsors is the active funding destination. This policy is not tax, financial, or legal advice.**
 
 ## Current safe setup
 
-The repository's Sponsor button leads only to the project's [support page](../donate.html). That page collects no payment details and has no active donation link. The static demo never receives card, bank, or tax information.
+The repository's native Sponsor button points to the project's [GitHub Sponsors profile](https://github.com/sponsors/mexicanjumbalia). The project's [support page](../donate.html) uses the same destination. The static demo never receives card, bank, or tax information.
 
 For project-support and funding inquiries, contact [drivercompanionsuppteam1@gmail.com](mailto:drivercompanionsuppteam1@gmail.com). This email is a public project contact; it is not a payment destination.
 
