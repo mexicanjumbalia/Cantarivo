@@ -21,6 +21,16 @@ The catalog is currently empty by design. Any future track must be listed in [`c
 
 Driver Companion is available directly in a modern browser at [mexicanjumbalia.github.io/driver-companion](https://mexicanjumbalia.github.io/driver-companion/). No download, local setup, or special address is needed.
 
+## Optional local preview
+
+This section is only for someone working on the project itself. Run:
+
+```bash
+npm start
+```
+
+Then open [http://localhost:4184](http://localhost:4184) in a browser. This temporary preview runs only on the same computer that starts it. It is not public and does not point to anyone else’s computer. Everyone else should use the live site above.
+
 ## What it demonstrates
 
 - A parked-first, low-distraction drive setup.
