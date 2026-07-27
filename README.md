@@ -53,7 +53,7 @@ The repository includes a GitHub Actions workflow ready to deploy this static de
 
 ## Project support
 
-[`donate.html`](donate.html) is a transparent, optional project-support page. It accepts no payment information and has no active donation link by default. When a verified HTTPS funding destination is chosen, set `url` and `providerName` in `donation-config.js`. Once the repository exists, a matching GitHub sponsor button can be added with `.github/FUNDING.yml`.
+[`donate.html`](donate.html) is a transparent, optional project-support page. It accepts no payment information and has no active donation link by default. The repository's native GitHub Sponsor button points to this page—not to a payment provider. When a verified HTTPS funding destination is chosen, set `url` and `providerName` in `donation-config.js`.
 
 ## Development checks
 

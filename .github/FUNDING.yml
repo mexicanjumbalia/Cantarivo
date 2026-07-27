@@ -1,0 +1,3 @@
+# The native GitHub Sponsor button points to Driver Companion's own support page.
+# No payment processor or personal funding destination is configured here.
+custom: ["https://mexicanjumbalia.github.io/driver-companion/donate.html"]
