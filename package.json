@@ -1,0 +1,10 @@
+{
+  "name": "driver-companion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local-first, driver-safe sing-along companion with a CC0-only music catalog policy.",
+  "scripts": {
+    "start": "npx --yes serve . -l 4184",
+    "check:catalog": "node scripts/validate-catalog.mjs"
+  }
+}

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#091A2C" />
+    <meta
+      name="description"
+      content="A privacy-first, driver-safe sing-along companion demo."
+    />
+    <title>Driver Companion</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Driver Companion home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M6 20.5V17a10 10 0 0 1 20 0v3.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" />
+              <path d="M4 20.5h5.5v4H7a3 3 0 0 1-3-3v-1Z M28 20.5h-5.5v4H25a3 3 0 0 0 3-3v-1Z" fill="currentColor" />
+              <path d="M16 8.5v10m0 0 3-2.2m-3 2.2-3-2.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span>driver companion</span>
+        </a>
+
+        <div class="drive-chip" id="driveStatus" aria-live="polite">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Parked · setup mode</span>
+        </div>
+
+        <button class="icon-button" id="settingsButton" type="button" aria-label="Open privacy controls" aria-controls="privacyPanel" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z" stroke="currentColor" stroke-width="1.8" />
+            <path d="M19.43 15a1.66 1.66 0 0 0 .33 1.83l.06.06-2 2-.06-.06a1.66 1.66 0 0 0-1.83-.33 1.66 1.66 0 0 0-1 1.52v.09h-2.86v-.09a1.66 1.66 0 0 0-1-1.52 1.66 1.66 0 0 0-1.83.33l-.06.06-2-2 .06-.06A1.66 1.66 0 0 0 7.57 15a1.66 1.66 0 0 0-1.52-1H6v-2.86h.05a1.66 1.66 0 0 0 1.52-1 1.66 1.66 0 0 0-.33-1.83l-.06-.06 2-2 .06.06a1.66 1.66 0 0 0 1.83.33 1.66 1.66 0 0 0 1-1.52V5h2.86v.09a1.66 1.66 0 0 0 1 1.52 1.66 1.66 0 0 0 1.83-.33l.06-.06 2 2-.06.06a1.66 1.66 0 0 0-.33 1.83 1.66 1.66 0 0 0 1.52 1H20v2.86h-.05a1.66 1.66 0 0 0-1.52 1Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="pageTitle">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAR, YOUR CHORUS</p>
+            <h1 id="pageTitle">Keep the road yours.<br /><em>Keep the song alive.</em></h1>
+            <p class="hero-copy">A quiet co-pilot for the drivers who sing. It listens only when you choose, and it joins only when you say yes.</p>
+          </div>
+          <aside class="safety-note" aria-label="Driving safety reminder">
+            <span class="safety-icon" aria-hidden="true">✦</span>
+            <span><strong>Set up while parked.</strong> During a drive, use one-tap controls or let the companion stay quiet.</span>
+          </aside>
+        </section>
+
+        <section class="console-grid" aria-label="Drive controls">
+          <article class="main-console" aria-labelledby="consoleTitle">
+            <div class="console-topline">
+              <p class="label">SING-ALONG COMPANION</p>
+              <span class="mode-badge" id="modeBadge">OFF</span>
+            </div>
+
+            <div class="listening-orb" id="listeningOrb" aria-hidden="true">
+              <span class="orb-ring ring-one"></span>
+              <span class="orb-ring ring-two"></span>
+              <span class="orb-core">
+                <svg viewBox="0 0 32 32" fill="none">
+                  <rect x="12" y="5" width="8" height="14" rx="4" stroke="currentColor" stroke-width="2.4" />
+                  <path d="M8 15a8 8 0 0 0 16 0m-8 8v4m-4 0h8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+                </svg>
+              </span>
+            </div>
+
+            <h2 id="consoleTitle" class="console-title">Ready when you are.</h2>
+            <p class="console-copy" id="consoleCopy">Start a drive to choose how your microphone and singing buddy work.</p>
+
+            <div class="audio-meter" aria-label="Live microphone level" aria-describedby="meterDescription">
+              <div class="meter-bars" id="meterBars" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <span id="meterDescription">Mic level · not recording</span>
+            </div>
+
+            <button class="primary-button" id="startDriveButton" type="button">
+              <span class="button-icon" aria-hidden="true">▶</span>
+              <span id="startButtonLabel">Start a drive</span>
+            </button>
+
+            <div class="manual-controls" id="manualControls" hidden>
+              <button class="manual-button" id="joinButton" type="button" aria-pressed="false">
+                <span class="soundwave" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span id="joinButtonLabel">Let companion join</span>
+              </button>
+              <button class="quiet-button" id="endDriveButton" type="button">End drive</button>
+            </div>
+          </article>
+
+          <aside class="side-stack">
+            <article class="status-card">
+              <div class="card-heading">
+                <span class="card-icon mint" aria-hidden="true">⌁</span>
+                <div>
+                  <p class="label">NOW HEARING</p>
+                  <h2 id="hearingTitle">Nothing yet</h2>
+                </div>
+              </div>
+              <p id="hearingCopy">Microphone access is off. Your car, your sound.</p>
+              <div class="detection-line" id="detectionLine">
+                <span class="detection-dot"></span><span id="detectionText">Waiting for your choice</span>
+              </div>
+            </article>
+
+            <article class="permission-card">
+              <div class="card-heading">
+                <span class="card-icon blue" aria-hidden="true">✓</span>
+                <div>
+                  <p class="label">SINGING BUDDY</p>
+                  <h2 id="permissionTitle">Always ask first</h2>
+                </div>
+              </div>
+              <p id="permissionCopy">If a vocal moment is noticed, you decide whether this companion joins.</p>
+              <button class="text-button" id="permissionButton" type="button">Choose permission <span aria-hidden="true">→</span></button>
+            </article>
+          </aside>
+        </section>
+
+        <section class="lower-grid" aria-label="Driver Companion details">
+          <article class="demo-card" aria-labelledby="demoTitle">
+            <div>
+              <p class="label">DEMO AUDIO INTELLIGENCE</p>
+              <h2 id="demoTitle">Try a vocal moment</h2>
+              <p>This demo visualizes voice activity. It does not identify songs, lyrics, or actual singing.</p>
+            </div>
+            <button class="demo-button" id="simulateButton" type="button" disabled>
+              <span class="sparkle" aria-hidden="true">✦</span> Simulate singing
+            </button>
+          </article>
+
+          <article class="privacy-summary" aria-labelledby="privacySummaryTitle">
+            <span class="privacy-lock" aria-hidden="true">⌑</span>
+            <div>
+              <p class="label">PRIVACY AT A GLANCE</p>
+              <h2 id="privacySummaryTitle">Local, temporary, yours.</h2>
+              <p>No audio is saved or sent anywhere in this demo. You can stop and clear the current drive at any time.</p>
+            </div>
+            <button class="text-button" id="privacyButton" type="button">Privacy controls <span aria-hidden="true">→</span></button>
+          </article>
+        </section>
+
+        <section class="how-it-works" aria-labelledby="howItWorksTitle">
+          <p class="label">BUILT FOR THE ROAD</p>
+          <h2 id="howItWorksTitle">One clear choice at a time.</h2>
+          <div class="steps">
+            <article><span>01</span><h3>You start</h3><p>Turn on the microphone only when parked and ready.</p></article>
+            <article><span>02</span><h3>It notices</h3><p>The demo flags a possible vocal moment—never a song or lyric.</p></article>
+            <article><span>03</span><h3>You decide</h3><p>The companion stays quiet until you allow it to join.</p></article>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>DRIVER COMPANION · CONCEPT DEMO</span>
+        <span><a href="donate.html">Support the project</a> · Mock audio intelligence · No account required</span>
+      </footer>
+    </div>
+
+    <aside class="privacy-panel" id="privacyPanel" aria-labelledby="privacyTitle" aria-hidden="true">
+      <div class="panel-header">
+        <div>
+          <p class="label">YOUR CONTROLS</p>
+          <h2 id="privacyTitle">Privacy & permission</h2>
+        </div>
+        <button class="icon-button" id="closeSettingsButton" type="button" aria-label="Close privacy controls">×</button>
+      </div>
+
+      <section class="privacy-section">
+        <h3>Microphone</h3>
+        <p class="scope-copy"><strong>Local voice-level analysis only.</strong> This demo neither records nor uploads audio.</p>
+        <div class="setting-row">
+          <div><strong>Current access</strong><span id="micAccessText">Not connected</span></div>
+          <button class="small-button" id="micControlButton" type="button">Enable mic</button>
+        </div>
+      </section>
+
+      <section class="privacy-section">
+        <fieldset class="permission-options">
+          <legend>When a vocal moment is noticed</legend>
+          <label class="radio-option">
+            <input type="radio" name="companionPermission" value="ask" checked />
+            <span><strong>Ask me first</strong><small>The companion never joins on its own.</small></span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="companionPermission" value="drive" />
+            <span><strong>Allow for this drive</strong><small>It can join after a detected vocal moment until you end the drive.</small></span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="companionPermission" value="never" />
+            <span><strong>Keep companion quiet</strong><small>Voice activity can be shown, but no joining prompts play.</small></span>
+          </label>
+        </fieldset>
+      </section>
+
+      <section class="privacy-section receipt-section">
+        <h3>Drive receipt</h3>
+        <p id="receiptText">No current drive. Nothing has been stored.</p>
+        <button class="text-button danger-text" id="clearDriveButton" type="button">Clear this drive’s activity</button>
+      </section>
+
+      <p class="integration-note"><strong>Production integration:</strong> replace the demo adapters with a consented on-device classifier, licensed music data, and a licensed speech/singing service. Keep audio processing local where possible.</p>
+    </aside>
+    <div class="scrim" id="scrim" hidden></div>
+
+    <dialog class="consent-dialog" id="microphoneDialog" aria-labelledby="microphoneTitle">
+      <div class="dialog-icon" aria-hidden="true">◌</div>
+      <p class="label">MICROPHONE REQUEST</p>
+      <h2 id="microphoneTitle">Let Driver Companion hear voice level for this drive?</h2>
+      <p>It will use your microphone in this browser to show a local sound level. This demo does not save, transcribe, identify, or upload audio.</p>
+      <div class="dialog-facts" aria-label="Microphone permission scope">
+        <span><strong>Scope</strong> Local sound-level meter</span>
+        <span><strong>Duration</strong> Until this drive ends</span>
+        <span><strong>Storage</strong> None</span>
+      </div>
+      <div class="dialog-actions">
+        <button class="secondary-button" id="declineMicButton" type="button">Not now</button>
+        <button class="primary-button compact" id="allowMicButton" type="button">Allow for this drive</button>
+      </div>
+    </dialog>
+
+    <dialog class="consent-dialog" id="joinDialog" aria-labelledby="joinTitle">
+      <div class="dialog-icon music" aria-hidden="true">♫</div>
+      <p class="label">VOCAL MOMENT NOTICED</p>
+      <h2 id="joinTitle">Want a singing buddy for this drive?</h2>
+      <p>The demo detected voice activity. No music, artist, lyric, or song has been identified. You stay in control.</p>
+      <div class="dialog-actions stacked-actions">
+        <button class="primary-button compact" id="allowJoinDriveButton" type="button">Let companion join this drive</button>
+        <button class="secondary-button" id="keepQuietButton" type="button">Keep companion quiet</button>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" aria-live="polite" role="status" hidden></div>
+    <script src="app.js"></script>
+  </body>
+</html>
