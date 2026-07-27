@@ -6,6 +6,8 @@
 
 Driver Companion is interested in original, consent-led vocal moments that can make a driver's sing-along feel more companionable without distracting from the road. We welcome conversations with vocalists, writers, producers, and labels that can document the rights needed for an app experience.
 
+For an initial collaboration discussion, contact [drivercompanionsuppteam1@gmail.com](mailto:drivercompanionsuppteam1@gmail.com). Please send a short rights summary first; do not send audio files before a rights path has been agreed in writing.
+
 We will not accept "unlicensed" audio, chart-song covers, lyrics, backing tracks, stems, samples, or voice-clone materials on the promise that an artist said yes. A public streaming link, social post, or verbal permission is not enough. Do not send audio files until a rights path has been agreed in writing.
 
 ## Public-repository rule

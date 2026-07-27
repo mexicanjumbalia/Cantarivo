@@ -6,6 +6,8 @@
 
 The repository's Sponsor button leads only to the project's [support page](../donate.html). That page collects no payment details and has no active donation link. The static demo never receives card, bank, or tax information.
 
+For project-support and funding inquiries, contact [drivercompanionsuppteam1@gmail.com](mailto:drivercompanionsuppteam1@gmail.com). This email is a public project contact; it is not a payment destination.
+
 ## Before activating donations
 
 1. Choose a funding recipient that the project owner is legally able to control. For stronger public-identity separation, consider a project-owned organization only after checking the platform's identity, payout, tax, and disclosure requirements.

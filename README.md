@@ -53,7 +53,7 @@ The repository includes a GitHub Actions workflow ready to deploy this static de
 
 ## Project support
 
-[`donate.html`](donate.html) is a transparent, optional project-support page. It accepts no payment information and has no active donation link by default. The repository's native GitHub Sponsor button points to this page—not to a payment provider. Activate a funding destination only after following the [Donations and Sponsorship policy](docs/DONATIONS_AND_SPONSORSHIP.md).
+[`donate.html`](donate.html) is a transparent, optional project-support page. It accepts no payment information and has no active donation link by default. The repository's native GitHub Sponsor button points to this page—not to a payment provider. Activate a funding destination only after following the [Donations and Sponsorship policy](docs/DONATIONS_AND_SPONSORSHIP.md). For project support, licensing, or collaboration inquiries, email [drivercompanionsuppteam1@gmail.com](mailto:drivercompanionsuppteam1@gmail.com).
 
 ## Development checks
 
