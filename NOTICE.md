@@ -1,4 +1,6 @@
-# Driver Companion notice
+# Driver Companion notices
+
+Required Notice: Copyright (c) 2026 Driver Companion contributors
 
 ## Third-party audio assets
 

@@ -4,7 +4,7 @@
 
 Driver Companion is a local-first, privacy-minded singing co-pilot for the moments when a traffic light becomes a spotlight. It lets drivers choose whether a companion may join a vocal moment—without collecting audio, identifying songs, or treating consent as a setting buried three screens deep.
 
-This repository is an open-source **concept demo**. It intentionally contains **no third-party music, lyrics, backing tracks, vocal models, or music-recognition service**. The included demo uses a synthetic vocal moment and a local microphone-level meter only.
+This repository is a source-available **concept demo**. It intentionally contains **no third-party music, lyrics, backing tracks, vocal models, or music-recognition service**. The included demo uses a synthetic vocal moment and a local microphone-level meter only.
 
 ## The open-content promise
 
@@ -53,7 +53,7 @@ The repository includes a GitHub Actions workflow ready to deploy this static de
 
 ## Project support
 
-[`donate.html`](donate.html) is a transparent, optional project-support page. It accepts no payment information and has no active donation link by default. The repository's native GitHub Sponsor button points to this page—not to a payment provider. When a verified HTTPS funding destination is chosen, set `url` and `providerName` in `donation-config.js`.
+[`donate.html`](donate.html) is a transparent, optional project-support page. It accepts no payment information and has no active donation link by default. The repository's native GitHub Sponsor button points to this page—not to a payment provider. Activate a funding destination only after following the [Donations and Sponsorship policy](docs/DONATIONS_AND_SPONSORSHIP.md).
 
 ## Development checks
 
@@ -72,11 +72,17 @@ Driver Companion/
   styles.css                     # Responsive visual design
   content/music-catalog.json     # CC0-only catalog; empty until an asset is verified
   docs/OPEN_CONTENT_POLICY.md    # Asset intake and licensing rules
+  docs/MUSIC_COLLABORATION_FRAMEWORK.md # Partner-audio rights checklist
+  docs/PRODUCER_VOCALIST_TERM_SHEET_TEMPLATE.md # Nonbinding partner discussion template
+  docs/DONATIONS_AND_SPONSORSHIP.md # Safe funding activation policy
+  docs/PROJECT_RIGHTS_AND_COMMERCIAL_LICENSING.md # Code/IP policy
   scripts/validate-catalog.mjs   # Catalog compliance check
   .github/workflows/             # License guard and GitHub Pages deployment
   NOTICE.md                      # Third-party music and attribution record
 ```
 
-## License
+## License and commercial use
 
-The source code is available under the [MIT License](LICENSE). Audio assets, if any are ever added, retain the individual license documented in the catalog and notice files; they are never silently relicensed as MIT.
+The current source code is available under the [PolyForm Noncommercial License 1.0.0](LICENSE). It is source-available, but it is **not** OSI open source because commercial use is not granted. Commercial rights, if they are ever offered, require a separately signed agreement; see [Commercial Licensing](COMMERCIAL-LICENSE.md) and the [project rights policy](docs/PROJECT_RIGHTS_AND_COMMERCIAL_LICENSING.md).
+
+The repository's initial public version carried the MIT License. That earlier grant remains relevant to copies that were distributed with it; the present policy applies prospectively to later releases. Audio assets, if any are ever added, retain the individual rights status documented in the catalog and notice files; they are never silently relicensed as source code.
