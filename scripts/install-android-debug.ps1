@@ -19,8 +19,8 @@ if ($devices.Count -ne 1) {
   throw 'More than one Android device is connected. Disconnect all but the owner-controlled test phone, then try again.'
 }
 
-Write-Output 'Ready to install the local private-pilot debug build on one connected, owner-controlled Android phone.'
-Write-Output 'This is not a Play Store build. It is for parked testing only and asks for microphone access only when you explicitly choose one on-device command session.'
+Write-Output 'Ready to install the local preview debug build on one connected, owner-controlled Android phone.'
+Write-Output 'This is not a Play Store build. It is for stationary test testing only and asks for microphone access only when you explicitly choose one on-device command session.'
 $confirmation = Read-Host 'Type INSTALL to continue'
 if ($confirmation -cne 'INSTALL') {
   Write-Output 'Installation cancelled. No device changes were made.'
@@ -30,4 +30,4 @@ if ($confirmation -cne 'INSTALL') {
 & $adb -s $devices[0] install -r $apk
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
-Write-Output 'Installed. Open Cantarivo on the phone while parked and follow docs/ANDROID_PRIVATE_PILOT_DEVICE_SETUP.md.'
+Write-Output 'Installed. Open Cantarivo on the phone in a stationary controlled test environment and follow docs/ANDROID_PREVIEW_DEVICE_SETUP.md.'

@@ -12,4 +12,5 @@ android/captures/
 tools/
 private-license-records/
 work/
+public-site/
 android/gradle/*.backup

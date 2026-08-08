@@ -6,11 +6,11 @@
 
 | Need | Proposed URL | Use |
 | --- | --- | --- |
-| Privacy policy | `https://mexicanjumbalia.github.io/driver-companion/privacy.html` | Google Play Privacy Policy field and in-app policy link |
-| Data Safety review | `https://mexicanjumbalia.github.io/driver-companion/data-safety.html` | Public review/reference page; not a replacement for the Play Console form |
-| AI vocal activation review | `https://mexicanjumbalia.github.io/driver-companion/ai-vocal-companion.html` | Feature-design and consent review only |
+| Privacy policy | `https://mexicanjumbalia.github.io/user-companion/privacy.html` | Google Play Privacy Policy field and in-app policy link |
+| Data Safety review | `https://mexicanjumbalia.github.io/user-companion/data-safety.html` | Public review/reference page; not a replacement for the Play Console form |
+| AI vocal activation review | `https://mexicanjumbalia.github.io/user-companion/ai-vocal-companion.html` | Feature-design and consent review only |
 | Privacy/support email | `mailto:drivercompanionsuppteam1@gmail.com` | Privacy inquiries, corrections, and support containing personal information |
-| Public bug report | `https://github.com/mexicanjumbalia/driver-companion/issues/new/choose` | Non-sensitive bug reports only; never request audio, transcripts, phone numbers, or location |
+| Public bug report | `https://github.com/mexicanjumbalia/user-companion/issues/new/choose` | Non-sensitive bug reports only; never request audio, transcripts, phone numbers, or location |
 
 ## Publication checklist
 

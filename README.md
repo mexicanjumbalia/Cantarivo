@@ -63,7 +63,7 @@ Then open [http://localhost:4184](http://localhost:4184) in a browser. This temp
 
 ## Singing companion direction
 
-The preview is deliberately **button-first**: people can plainly allow the demo companion, keep it quiet, or end a singing session. Every companion decision expires when the session ends. The Android app uses a user-started foreground service for the active session, so local sound analysis can continue under other apps while an ongoing notification provides Pause/Resume and End session controls. Calls and higher-priority microphone use pause both analysis and the app's own companion cue; the same session resumes automatically only while the visible setting remains enabled. No phone-state or call-log permission is requested. The native, on-device signal gate sends the interface only an instantaneous numeric level, a narrow event, and an ephemeral coarsely rounded pitch. It never sends audio, a transcript, or a voiceprint and cannot distinguish the user from music, other people, or background noise. The separate one-command Android speech recognizer remains bounded, foreground-only, and has no cloud fallback or wake word. The browser demo remains foreground-only. See the [scope document](docs/PRIVATE_PILOT_SCOPE.md), [audio research and integration record](docs/OPEN_SOURCE_AUDIO_RESEARCH.md), [Android Studio handoff](docs/ANDROID_STUDIO_HANDOFF.md), the [native speech privacy and device test plan](docs/NATIVE_SPEECH_PRIVACY_AND_DEVICE_TEST_PLAN.md), and the [Android device setup guide](docs/ANDROID_PRIVATE_PILOT_DEVICE_SETUP.md).
+The preview is deliberately **button-first**: people can plainly allow the demo companion, keep it quiet, or end a singing session. Every companion decision expires when the session ends. The Android app uses a user-started foreground service for the active session, so local sound analysis can continue under other apps while an ongoing notification provides Pause/Resume and End session controls. Calls and higher-priority microphone use pause both analysis and the app's own companion cue; the same session resumes automatically only while the visible setting remains enabled. No phone-state or call-log permission is requested. The native, on-device signal gate sends the interface only an instantaneous numeric level, a narrow event, and an ephemeral coarsely rounded pitch. It never sends audio, a transcript, or a voiceprint and cannot distinguish the user from music, other people, or background noise. The separate one-command Android speech recognizer remains bounded, foreground-only, and has no cloud fallback or wake word. The browser demo remains foreground-only. See the [scope document](docs/SINGING_COMPANION_SCOPE.md), [audio research and integration record](docs/OPEN_SOURCE_AUDIO_RESEARCH.md), [Android Studio handoff](docs/ANDROID_STUDIO_HANDOFF.md), the [native speech privacy and device test plan](docs/NATIVE_SPEECH_PRIVACY_AND_DEVICE_TEST_PLAN.md), and the [Android device setup guide](docs/ANDROID_PREVIEW_DEVICE_SETUP.md).
 
 ## Future recognition and artist-library integrations
 
@@ -83,7 +83,7 @@ Connect one owner-controlled Android phone with USB debugging approved, then use
 powershell -ExecutionPolicy Bypass -File .\scripts\install-android-debug.ps1
 ```
 
-It refuses to select among multiple devices and requires `INSTALL` before changing a phone. Follow the [device setup guide](docs/ANDROID_PRIVATE_PILOT_DEVICE_SETUP.md).
+It refuses to select among multiple devices and requires `INSTALL` before changing a phone. Follow the [device setup guide](docs/ANDROID_PREVIEW_DEVICE_SETUP.md).
 
 ## Privacy and safety
 
@@ -97,7 +97,7 @@ This project is a design and engineering preview, not legal advice. A production
 
 ## Publishing as a free GitHub Pages project
 
-The repository includes a GitHub Actions workflow ready to deploy this static demo to GitHub Pages. GitHub Pages provides HTTPS for public repositories, which is needed for browser microphone access. Keep it a static, client-side demo: GitHub Pages is not a free SaaS host for accounts, payments, or server-side audio processing.
+The repository includes a GitHub Actions workflow ready to deploy this static demo to GitHub Pages. GitHub Pages provides HTTPS for public repositories, which is needed for browser microphone access. The workflow builds an explicit allowlist into `public-site/`; it does not upload the repository root, Android sources, rights schema, or development documentation. Keep it a static, client-side demo: GitHub Pages is not a free SaaS host for accounts, payments, or server-side audio processing.
 
 ## Project support
 
@@ -107,9 +107,13 @@ The repository includes a GitHub Actions workflow ready to deploy this static de
 
 ```bash
 npm run check:catalog
+node scripts/build-public-site.mjs
+node scripts/scan-secrets.mjs
 ```
 
 The check fails if a catalog entry is missing its provenance or is not CC0 for both the musical composition and the sound recording.
+
+The release workflow also runs Android privacy and AndroidX checks, a debug Android build, a tracked-file secret scan, and a pnpm audit. Read [Main-branch protection](docs/BRANCH_PROTECTION.md) before merging a release.
 
 ## Project map
 
@@ -125,9 +129,9 @@ Cantarivo/
   docs/PRODUCER_VOCALIST_TERM_SHEET_TEMPLATE.md # Nonbinding partner discussion template
   docs/DONATIONS_AND_SPONSORSHIP.md # Safe funding activation policy
   docs/PROJECT_RIGHTS_AND_COMMERCIAL_LICENSING.md # Code/IP policy
-  docs/PRIVATE_PILOT_SCOPE.md      # Legacy-named scope file for session and native voice-command boundaries
+  docs/SINGING_COMPANION_SCOPE.md      # Scope for session and native voice-command boundaries
   docs/NATIVE_SPEECH_PRIVACY_AND_DEVICE_TEST_PLAN.md # Native speech privacy and physical-device test checklist
-  docs/ANDROID_PRIVATE_PILOT_DEVICE_SETUP.md # Owner-controlled Android installation and test checklist
+  docs/ANDROID_PREVIEW_DEVICE_SETUP.md # Owner-controlled Android installation and test checklist
   docs/ANDROID_STUDIO_HANDOFF.md # Transfer and Android Studio setup guide
   docs/OPEN_SOURCE_AUDIO_RESEARCH.md # Verified local-audio options and integration gates
   integrations/recognition/         # Future metadata/recognition adapters and partner asset contracts

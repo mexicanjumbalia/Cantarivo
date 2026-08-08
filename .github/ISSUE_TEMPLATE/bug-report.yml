@@ -25,7 +25,7 @@ body:
     id: build
     attributes:
       label: App or website version
-      description: For example, Android private pilot 1.0 or the public website date.
+      description: For example, Android controlled preview 1.0 or the public website date.
   - type: checkboxes
     id: privacy
     attributes:

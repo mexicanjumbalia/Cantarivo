@@ -6,7 +6,7 @@ Use this short form to organize a conversation before an attorney prepares the a
 
 | Topic | Discussion record |
 | --- | --- |
-| Project | Cantarivo / [specific product or pilot] |
+| Project | Cantarivo / [specific product or preview] |
 | Project contact | drivercompanionsuppteam1@gmail.com |
 | Potential partner | [Legal name or entity, role, and authorized representative] |
 | Proposed asset | [Working title, version, and short description] |
@@ -14,7 +14,7 @@ Use this short form to organize a conversation before an attorney prepares the a
 | Originality / samples | [Confirm wholly original, or identify every sample, beat lease, library asset, and prior release] |
 | Intended app use | [Describe the exact experience; do not write "all media" or "any use"] |
 | Asset status | [CC0 public-repository proposal / separately licensed private-product proposal / not yet approved] |
-| Requested term and territory | [e.g., one pilot only; one country; defined dates] |
+| Requested term and territory | [e.g., one preview only; one country; defined dates] |
 | Credit and presentation | [How performer, writer, producer, and label will be credited; marketing opt-in or no marketing] |
 | Compensation | [Fee, royalty, reporting cadence, audit rights, payment conditions, or "not discussed"] |
 | Editing and derivative uses | [Permitted edits, clips, harmonies, remixes, translations, downloads/caching, and approvals] |

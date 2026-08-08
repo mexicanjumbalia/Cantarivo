@@ -1,0 +1,3 @@
+# Require the repository owner to be requested for every change. GitHub branch
+# protection must still be configured to require CODEOWNERS review on main.
+* @mexicanjumbalia

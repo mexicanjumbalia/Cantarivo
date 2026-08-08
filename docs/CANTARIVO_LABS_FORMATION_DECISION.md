@@ -16,7 +16,7 @@ The legal name remains subject to the selected state's entity-name rules and acc
 
 ## Recommended starting structure
 
-For the current private-pilot stage, the conservative working recommendation is:
+For the current preview stage, the conservative working recommendation is:
 
 1. Form **Cantarivo Labs LLC in the state where the business is actually operated**, unless startup counsel identifies a concrete financing reason to form elsewhere.
 2. Use the LLC's default federal tax classification initially: disregarded entity for one eligible owner or partnership for multiple owners.

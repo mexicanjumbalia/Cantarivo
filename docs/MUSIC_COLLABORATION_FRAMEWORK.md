@@ -46,13 +46,13 @@ Use the [Producer and Vocalist Collaboration Term Sheet](PRODUCER_VOCALIST_TERM_
 
 Cantarivo may later offer an opt-in, rights-cleared listening mode that pairs a song's authorized master or backing track with the vocalist's own original raw vocal or stems. The goal is authentic, timing-aligned playback; it is not singer imitation, voice cloning, music recognition, or a substitute for a performer's consent.
 
-This is deferred until after the initial private pilot. Before implementation:
+This is deferred until after the initial controlled preview. Before implementation:
 
 1. Use a written agreement that separately covers the song/master or backing track, raw vocal or stems, composition and lyrics, performer/voice consent, and every sample or session contribution.
 2. Require delivery metadata: BPM, time signature, sample rate, channel layout, a fixed start offset or beat grid, and approved mix/stem versions.
-3. Precompute timing locally and test drift and latency across phone speakers and Bluetooth/car audio. Do not use microphone capture of the driver or passengers for alignment.
-4. Let the driver select the experience while parked; never auto-start it or offer timing/mix controls while moving. Keep an immediate stop/quiet control.
-5. Keep raw vocal files local unless a future written agreement and privacy review specifically authorize a different path. Do not retain driver or passenger audio.
+3. Precompute timing locally and test drift and latency across phone speakers and Bluetooth/car audio. Do not use microphone capture of the user or passengers for alignment.
+4. Let the user select the experience in a stationary controlled test environment; never auto-start it or offer timing/mix controls while moving. Keep an immediate stop/quiet control.
+5. Keep raw vocal files local unless a future written agreement and privacy review specifically authorize a different path. Do not retain user or passenger audio.
 6. Treat this as a production-audio and rights feature: it needs device testing, audio-focus/interrupt handling, accessibility review, and legal/store review before public release.
 
 ## Plain-language invitation copy

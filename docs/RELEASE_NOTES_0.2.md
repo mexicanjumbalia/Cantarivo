@@ -2,11 +2,11 @@
 
 ## Release theme
 
-Version 0.2 moves the project from a driving/private-pilot presentation to a general singing companion and establishes the partner-ready foundation for future music recognition and artist-approved vocal experiences.
+Version 0.2 moves the project from a active use/preview presentation to a general singing companion and establishes the partner-ready foundation for future music recognition and artist-approved vocal experiences.
 
 ## Included
 
-- Removed the unnecessary in-app adult gate and parked-use product flow.
+- Removed the unnecessary in-app adult gate and stationary test-use product flow.
 - Updated visible language to “singing session,” “companion,” and local-first listening.
 - Preserved explicit session consent, local microphone controls, interruption handling, and Silence / Stop behavior.
 - Added a future recognition and artist-library integration contract under `integrations/recognition/`.

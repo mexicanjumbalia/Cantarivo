@@ -1,0 +1,44 @@
+name: Quality and release gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: JavaScript, catalog, Android policy, and public-site checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - run: node --check app.js
+      - run: node scripts/validate-catalog.mjs
+      - run: node scripts/validate-cc0-research-catalog.mjs
+      - run: node scripts/verify-android-voice-policy.mjs
+      - run: node scripts/verify-androidx.mjs
+      - run: node scripts/build-public-site.mjs
+      - run: node scripts/scan-secrets.mjs
+      - run: git diff --check
+
+  android-build:
+    name: Android debug build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00 # v4.7.1
+        with:
+          distribution: temurin
+          java-version: '21'
+      - run: corepack enable
+      - run: corepack prepare pnpm@11.16.0 --activate
+      - run: pnpm install --frozen-lockfile
+      - run: ./android/gradlew --no-daemon --max-workers=2 assembleDebug

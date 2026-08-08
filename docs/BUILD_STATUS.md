@@ -5,7 +5,7 @@ Updated August 7, 2026.
 ## Corrected product surface
 
 - General singing-companion language is used in the visible app.
-- The parked-use, driving, road, vehicle, and unnecessary adult-entry gate were removed from the released product surface.
+- The stationary test-use, active use, road, vehicle, and unnecessary adult-entry gate were removed from the released product surface.
 - Microphone preference is remembered locally after the Android permission grant; the app does not repeatedly prompt unless the permission is revoked, cleared, or the app is reinstalled.
 - A session-level companion choice and an immediate `Silence / Stop` control remain.
 - Legacy Android package/action identifiers remain only for update compatibility and are not product copy.
