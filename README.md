@@ -24,8 +24,6 @@ Cantarivo is a local-first, privacy-minded singing companion for moments when ev
 | Play Store title | Cantarivo: Singing Companion |
 | Positioning line | Their voices sing with you. |
 
-Do not describe Cantarivo Labs LLC as an active legal entity until the selected state accepts its formation filing. The Android application ID remains `com.drivercompanion.pilot` for update compatibility; choose the permanent production application ID before the first Play Store release.
-
 This repository is a source-available **singing companion preview**. It includes five locally bundled, manually selected **CC0** playtest tracks; it contains no commercial-catalog music, vocal models, music-recognition service, lyrics display, or song-identification feature. The Android preview has a temporary local sound-level and heuristic vocal-like-moment gate, not a real singing classifier. With a separate per-session choice, it can play a brief local **wordless synthetic harmony tone**; it is not a human, artist, or cloned voice.
 
 ## The open-content promise
@@ -37,7 +35,7 @@ Cantarivo will accept only audio assets that are explicitly dedicated under **CC
 - no CC-BY-NC, CC-BY-ND, CC-BY-SA, or other conditional audio licenses;
 - no asset is shipped until its composition and recording rights are both documented as CC0.
 
-The release-ready catalog remains empty by design. The preview catalog contains five local CC0 playtest tracks, each with a source record and checksum; the remaining 95 entries are not bundled. Any future track must be listed in [`content/music-catalog.json`](content/music-catalog.json), pass the automated guard, and be recorded in [`NOTICE.md`](NOTICE.md). Read the full [Open Content Policy](docs/OPEN_CONTENT_POLICY.md) before proposing an asset.
+The release-ready catalog remains empty by design. The preview catalog contains five local CC0 playtest tracks, each with a source record and checksum. Any future track must be listed in [`content/music-catalog.json`](content/music-catalog.json), pass the automated guard, and be recorded in [`NOTICE.md`](NOTICE.md). Read the full [Open Content Policy](docs/OPEN_CONTENT_POLICY.md) before proposing an asset.
 
 ## Explore the live site
 
@@ -63,7 +61,7 @@ Then open [http://localhost:4184](http://localhost:4184) in a browser. This temp
 
 ## Singing companion direction
 
-The preview is deliberately **button-first**: people can plainly allow the demo companion, keep it quiet, or end a singing session. Every companion decision expires when the session ends. The browser demo remains foreground-only and performs local sound-level analysis only after a clear, current-session choice. It does not record, transcribe, identify, retain, or upload audio. See the [scope document](docs/SINGING_COMPANION_SCOPE.md), [audio research and integration record](docs/OPEN_SOURCE_AUDIO_RESEARCH.md), and the [privacy policy](privacy.html).
+The preview is deliberately **button-first**: anyone can plainly allow the demo companion, keep it quiet, or end a singing session. Every companion decision expires when the session ends. The browser demo remains foreground-only and performs local sound-level analysis only after a clear, current-session choice. It does not record, transcribe, identify, retain, or upload audio. See the [scope document](docs/SINGING_COMPANION_SCOPE.md), [audio research and integration record](docs/OPEN_SOURCE_AUDIO_RESEARCH.md), and the [privacy policy](privacy.html).
 
 ## Future recognition and artist-library integrations
 
@@ -77,11 +75,7 @@ Use the public GitHub Pages site for the current Cantarivo preview, privacy mate
 
 Microphone audio is not recorded, transcribed, stored, or sent over the network by this demo. The five CC0 playtest tracks are static local app assets; playback produces no analytics and uses the device’s existing speaker or Bluetooth route. The companion’s default is quiet until the user chooses otherwise.
 
-Read the project&apos;s public [Privacy Policy](privacy.html), [legal review notes](docs/PRIVACY_LEGAL_REVIEW_NOTES.md), and [native speech privacy and device test plan](docs/NATIVE_SPEECH_PRIVACY_AND_DEVICE_TEST_PLAN.md) before adding a mobile voice feature. The policy distinguishes Cantarivo&apos;s no-recording, no-sale commitment from the separate privacy practices of operating systems, app stores, hosting, and funding providers.
-
-Before any public Google Play submission, review the draft [Data Safety sheet](data-safety.html), [foreground-service declaration draft](docs/ANDROID_FOREGROUND_SERVICE_DECLARATION_DRAFT.md), [AI vocal companion activation form](ai-vocal-companion.html), [AI vocal roadmap](docs/AI_VOCAL_COMPANION_ROADMAP.md), [Android AI vocal implementation plan](docs/ANDROID_AI_VOCAL_IMPLEMENTATION_PLAN.md), [finish-line task list](docs/FINISH_LINE_TASK_LIST.md), and [GitHub Pages privacy/support URL plan](docs/GITHUB_PAGES_PRIVACY_SUPPORT_PLAN.md). These are review materials only; the current AI vocal path is local wordless cue synthesis. No cloud AI singer, voice-cloning feature, or third-party audio provider is integrated or approved.
-
-This project is a design and engineering preview, not legal advice. A production release needs accessibility review, jurisdiction-specific privacy review, and rights clearance for every actual asset or service.
+This project is a design and engineering preview, not legal advice.
 
 ## Publishing as a free GitHub Pages project
 
