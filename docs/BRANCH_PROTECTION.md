@@ -7,7 +7,7 @@ Before the next release, protect `main` with:
 1. Require a pull request before merging.
 2. Require at least one approving review from `@mexicanjumbalia` or the configured CODEOWNER.
 3. Dismiss stale approvals when new commits are pushed.
-4. Require these checks: `quality`, `android-build`, `secrets`, `dependencies`, and `validate-catalog`.
+4. Require these checks: `quality`, `secrets`, `dependencies`, and `validate-catalog`.
 5. Require branches to be up to date before merging.
 6. Block force-pushes and branch deletion on `main`.
 7. Enable GitHub secret scanning and push protection if the repository plan supports them.
