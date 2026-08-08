@@ -31,7 +31,7 @@ This design reduces privacy risk, but does not make the product automatically la
 
 ## Owner decisions recorded August 2, 2026
 
-- Cantarivo is positioned as a general singing companion rather than a driving product.
+- Cantarivo is positioned as a general singing companion rather than a active use product.
 - No unnecessary in-app adult age gate. Google Play target-audience and content-rating declarations must match the released product.
 - Project operator does not intend to sell captured or transmitted voice, transcripts, analytics, or nearby speech to a third party. The shipped preview must retain the no-capture/no-transmission design before that commitment is presented as fact.
 - No counsel has reviewed these materials. This note and the privacy policy are product documentation, not a legal opinion.
@@ -45,7 +45,7 @@ Before a public mobile release, the project owner needs to provide or approve:
 - the final list of SDKs, hosting, crash reporting, analytics, and support tools;
 - the exact voice implementation and whether it can ever send data off-device;
 - the policy contact method and response process for privacy requests; and
-- a counsel review if the project adds any recording, transcript storage, cloud service, external pilot testers, payments, ads, accounts, or sensitive-person-data feature.
+- a counsel review if the project adds any recording, transcript storage, cloud service, external preview testers, payments, ads, accounts, or sensitive-person-data feature.
 
 ## Release rule
 

@@ -1,4 +1,4 @@
-# Android private-pilot shell
+# Android preview shell
 
 This directory is the generated-web output location for the Capacitor Android app. Do not edit `www/` directly; run `pnpm mobile:build` to copy the approved static interface from the repository root.
 

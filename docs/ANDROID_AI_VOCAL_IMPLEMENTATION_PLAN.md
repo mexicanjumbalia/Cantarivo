@@ -1,6 +1,6 @@
 # Android AI vocal implementation plan
 
-Status: private-pilot implementation plan, 2026-08-01.
+Status: preview implementation plan, 2026-08-01.
 
 ## Current implementation
 
@@ -10,7 +10,7 @@ The app now has three local companion output levels:
 2. Wordless synthetic harmony, generated locally with Web Audio.
 3. Local AI vocal cues, generated locally as a short voice-shaped, non-lyrical cue.
 
-The AI vocal cue path is intentionally narrow. It does not use a cloud model, voice clone, artist voice, lyric generator, commercial music recognizer, or uploaded microphone audio. It plays only after the driver has started a drive, enabled listening, chosen "Allow for this drive", and enabled local AI vocal cues in Privacy & permission.
+The AI vocal cue path is intentionally narrow. It does not use a cloud model, voice clone, artist voice, lyric generator, commercial music recognizer, or uploaded microphone audio. It plays only after the user has started a session, enabled listening, chosen "Allow for this session", and enabled local AI vocal cues in Privacy & permission.
 
 The current implementation is a prototype cue engine, not a production singing model. It gives the app an audible "someone is joining me" behavior while preserving the local-first privacy and release-review boundary.
 
@@ -18,25 +18,25 @@ The current implementation is a prototype cue engine, not a production singing m
 
 Use Android Studio's native workflow around the existing `android/` project:
 
-- Device Manager and AVD: create a Pixel-class emulator, then test the app's foreground drive flow, permission grant, permission denial, and permission revocation.
+- Device Manager and AVD: create a Pixel-class emulator, then test the app's foreground session flow, permission grant, permission denial, and permission revocation.
 - Run configuration: open the `android` directory, select the `app` configuration, and run it against the emulator or an owner-controlled Android phone.
 - Logcat: filter by `DriverCompanion` and `com.drivercompanion.pilot` while testing `DriverCompanionVoicePlugin`, microphone availability, local meter status, and on-device command status.
 - Debugger: set breakpoints in `DriverCompanionVoicePlugin.java` and `LocalVocalMomentAnalyzer.java` when validating microphone start/stop behavior.
-- Android Profiler: check CPU, memory, and energy while a drive is active, while music is playing, and while local AI vocal cues fire.
+- Android Profiler: check CPU, memory, and energy while a session is active, while music is playing, and while local AI vocal cues fire.
 - App Inspection and APK Analyzer: inspect the final debug/release build for unwanted permissions, network libraries, large bundled assets, and release-size impact.
-- Layout Inspector: verify the large driver controls remain visible and usable on the emulator sizes targeted for the private pilot.
+- Layout Inspector: verify the large user controls remain visible and usable on the emulator sizes targeted for the controlled preview.
 
 ## Microphone activation path
 
 Android owns the first runtime microphone permission dialog. The app cannot and should not bypass it. The Cantarivo path should be:
 
-1. In-app disclosure while parked.
+1. In-app disclosure in a stationary controlled test environment.
 2. Android `RECORD_AUDIO` permission request.
-3. Once granted, local listening can start automatically for later drives if the user enabled that setting.
-4. A visible drive session stays active, with Silence / Stop and End drive always reachable.
+3. Once granted, local listening can start automatically for later sessions if the user enabled that setting.
+4. A visible singing session stays active, with Silence / Stop and End session always reachable.
 5. If the OS permission is revoked, the app fails closed and returns to button controls.
 
-The private pilot now uses a user-started Android foreground service for active-drive local analysis. It starts only from the visible app after `RECORD_AUDIO` is granted, shows an ongoing notification, pauses microphone analysis and companion output for calls or competing microphone use, and supports automatic or manual resume. It declares exact microphone and media-playback service types, requests no phone-state or call-log permission, and remains subject to physical-device, battery, distraction, Play policy, and foreground-service declaration testing before release.
+The controlled preview now uses a user-started Android foreground service for active-session local analysis. It starts only from the visible app after `RECORD_AUDIO` is granted, shows an ongoing notification, pauses microphone analysis and companion output for calls or competing microphone use, and supports automatic or manual resume. It declares exact microphone and media-playback service types, requests no phone-state or call-log permission, and remains subject to physical-device, battery, distraction, Play policy, and foreground-service declaration testing before release.
 
 ## AI vocal progression
 

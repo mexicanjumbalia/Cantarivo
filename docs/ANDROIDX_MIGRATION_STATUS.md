@@ -16,4 +16,4 @@ Cantarivo is already an Android Studio Gradle project using AndroidX directly. N
 
 Run `npm run check:androidx` after adding or upgrading any Android or Capacitor plugin. A future dependency that still requires `com.android.support` must be upgraded or replaced rather than hidden behind Jetifier.
 
-The package/application ID and native class names are compatibility identifiers, not AndroidX migration markers. They remain unchanged for the current private pilot.
+The package/application ID and native class names are compatibility identifiers, not AndroidX migration markers. They remain unchanged for the current controlled preview.

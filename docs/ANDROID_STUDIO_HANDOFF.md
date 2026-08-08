@@ -20,24 +20,24 @@ The repository's `.gitignore` already excludes those locations. `android/local.p
 2. In the repository root, restore the locked JavaScript dependencies with `pnpm install --frozen-lockfile`.
 3. Build the web bundle and sync it into Capacitor: `pnpm android:sync`.
 4. In Android Studio, select **Open** and choose the repository's `android` directory. Accept the Gradle sync, choose an emulator or an owner-controlled Android phone, and run the `app` configuration.
-5. Test while parked only. The app requests the microphone only after an in-app explanation and explicit current-drive choice. If local Android recognition is unavailable, button controls remain available.
+5. Test in a stationary controlled test environment only. The app requests the microphone only after an in-app explanation and explicit current-session choice. If local Android recognition is unavailable, button controls remain available.
 
-For a command-line debug build, use the repository's `scripts/build-android-debug.ps1`; it expects the project-specific SDK/JDK setup described in `docs/ANDROID_PRIVATE_PILOT_DEVICE_SETUP.md`.
+For a command-line debug build, use the repository's `scripts/build-android-debug.ps1`; it expects the project-specific SDK/JDK setup described in `docs/ANDROID_PREVIEW_DEVICE_SETUP.md`.
 
 ## Source map
 
 | Location | Purpose |
 | --- | --- |
-| `index.html`, `app.js`, `styles.css` | Driver-safe interface, consent state, and browser-preview fallback. |
+| `index.html`, `app.js`, `styles.css` | user-safe interface, consent state, and browser-preview fallback. |
 | `capacitor.config.json` | Android app identifier and generated web bundle location. |
 | `scripts/build-mobile.mjs` | Copies approved web assets into the generated mobile bundle. |
 | `scripts/sync-android.mjs` | Runs the web bundle build, then Capacitor Android sync. |
-| `android/app/src/main/java/com/drivercompanion/pilot/` | Native Android activity, short on-device command adapter, local vocal-moment gate, and active-drive foreground service. |
+| `android/app/src/main/java/com/drivercompanion/pilot/` | Native Android activity, short on-device command adapter, local vocal-moment gate, and active-session foreground service. |
 | `android/app/src/main/AndroidManifest.xml` | Microphone, notification, and exact microphone/media foreground-service declarations; no Internet, phone-state, or call-log permission. |
 | `docs/OPEN_SOURCE_AUDIO_RESEARCH.md` | Integration decision record and future spike gate. |
 
 ## Release boundary
 
-The current project builds a debug private-pilot APK only. Before an official store launch, create a new release signing key outside the repository, raise `versionCode`/`versionName`, create an Android App Bundle, and complete real-device, accessibility, privacy, rights, and distraction reviews. Do not commit a key, add remote analytics, allow a cloud recognizer fallback, or change microphone behavior without updating the privacy policy, Android Data Safety declaration, app listing, and test plan.
+The current project builds a debug preview APK only. Before an official store launch, create a new release signing key outside the repository, raise `versionCode`/`versionName`, create an Android App Bundle, and complete real-device, accessibility, privacy, rights, and distraction reviews. Do not commit a key, add remote analytics, allow a cloud recognizer fallback, or change microphone behavior without updating the privacy policy, Android Data Safety declaration, app listing, and test plan.
 
 The project targets API 36 already, which satisfies the published Google Play requirement for new submissions after 2026-08-31. That is a compatibility requirement, not launch approval.

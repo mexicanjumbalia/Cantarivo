@@ -6,7 +6,7 @@
     "CC0-1.0"
   ],
   "tracks": [],
-  "privatePilotTracks": [
+  "previewTracks": [
     {
       "id": "cc0-komiku-fouler-l-horizon-140389",
       "title": "Fouler l'horizon",
@@ -18,8 +18,8 @@
       "containsLyrics": "not displayed or transcribed by the app",
       "containsThirdPartySamples": "source-level CC0 dedication recorded; no separate sample list supplied",
       "rightsStatement": "The individual Free Music Archive track page and its collection page displayed CC0 1.0 Universal when this record was retrieved. This is source-license evidence, not a legal warranty.",
-      "catalogStatus": "private-pilot-playtest",
-      "mediaPath": "assets/music/private-pilot/fouler-l-horizon.mp3",
+      "catalogStatus": "preview-playtest",
+      "mediaPath": "assets/music/cc0-playtest/fouler-l-horizon.mp3",
       "fileSha256": "986c1111be44233ddddd5a61ca3ffaaacb203311f18afd9d5ec89e239e3d572b"
     },
     {
@@ -33,8 +33,8 @@
       "containsLyrics": "not displayed or transcribed by the app",
       "containsThirdPartySamples": "source-level CC0 dedication recorded; no separate sample list supplied",
       "rightsStatement": "The individual Free Music Archive track page and its collection page displayed CC0 1.0 Universal when this record was retrieved. This is source-license evidence, not a legal warranty.",
-      "catalogStatus": "private-pilot-playtest",
-      "mediaPath": "assets/music/private-pilot/le-grand-village.mp3",
+      "catalogStatus": "preview-playtest",
+      "mediaPath": "assets/music/cc0-playtest/le-grand-village.mp3",
       "fileSha256": "f8a64cc1209f9efbbe1a1f437c18d1eed0758ea8a3cf0e0dbc650c87f43b6ab9"
     },
     {
@@ -48,8 +48,8 @@
       "containsLyrics": "not displayed or transcribed by the app",
       "containsThirdPartySamples": "source-level CC0 dedication recorded; no separate sample list supplied",
       "rightsStatement": "The individual Free Music Archive track page and its collection page displayed CC0 1.0 Universal when this record was retrieved. This is source-license evidence, not a legal warranty.",
-      "catalogStatus": "private-pilot-playtest",
-      "mediaPath": "assets/music/private-pilot/barque-sur-le-lac.mp3",
+      "catalogStatus": "preview-playtest",
+      "mediaPath": "assets/music/cc0-playtest/barque-sur-le-lac.mp3",
       "fileSha256": "b6e80f2dffba95a83ad25205d7600a029e747d18bad2d9e1d1557a6c45eeff85"
     },
     {
@@ -63,8 +63,8 @@
       "containsLyrics": "not displayed or transcribed by the app",
       "containsThirdPartySamples": "source-level CC0 dedication recorded; no separate sample list supplied",
       "rightsStatement": "The individual Free Music Archive track page and its collection page displayed CC0 1.0 Universal when this record was retrieved. This is source-license evidence, not a legal warranty.",
-      "catalogStatus": "private-pilot-playtest",
-      "mediaPath": "assets/music/private-pilot/la-citadelle.mp3",
+      "catalogStatus": "preview-playtest",
+      "mediaPath": "assets/music/cc0-playtest/la-citadelle.mp3",
       "fileSha256": "98e6186a85ad737571c3d1b67721371428f497d3b62e6555a34605a33913b4b2"
     },
     {
@@ -78,8 +78,8 @@
       "containsLyrics": "not displayed or transcribed by the app",
       "containsThirdPartySamples": "source-level CC0 dedication recorded; no separate sample list supplied",
       "rightsStatement": "The individual Free Music Archive track page and its collection page displayed CC0 1.0 Universal when this record was retrieved. This is source-license evidence, not a legal warranty.",
-      "catalogStatus": "private-pilot-playtest",
-      "mediaPath": "assets/music/private-pilot/la-ville-aux-ponts-suspendus.mp3",
+      "catalogStatus": "preview-playtest",
+      "mediaPath": "assets/music/cc0-playtest/la-ville-aux-ponts-suspendus.mp3",
       "fileSha256": "96225590ca58ea67cbbd2c9f79b0aae636a877646cc2dd8966b78731ab35839a"
     }
   ]

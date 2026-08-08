@@ -10,7 +10,7 @@ This is intentionally **not** an OSI open-source license. The Open Source Defini
 
 ## What it does not do
 
-Copyright protects the project's actual code, text, visual design, and other original expression. It does **not** give the project exclusive ownership of the general idea of a singing companion for drivers, a feature concept, or a method. The governing statute expressly excludes ideas, procedures, systems, and methods of operation from copyright protection. See [17 U.S.C. § 102(b)](https://www.copyright.gov/title17/92chap1.html#102).
+Copyright protects the project's actual code, text, visual design, and other original expression. It does **not** give the project exclusive ownership of the general idea of a singing companion for users, a feature concept, or a method. The governing statute expressly excludes ideas, procedures, systems, and methods of operation from copyright protection. See [17 U.S.C. § 102(b)](https://www.copyright.gov/title17/92chap1.html#102).
 
 The license does not clear, grant, or claim rights in third-party music, lyrics, recordings, performers, voices, names, images, samples, or trademarks. Those rights are handled separately under the [Open Content Policy](OPEN_CONTENT_POLICY.md) and the [Music collaboration framework](MUSIC_COLLABORATION_FRAMEWORK.md).
 

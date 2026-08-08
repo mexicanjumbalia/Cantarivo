@@ -4,7 +4,7 @@ Required Notice: Copyright (c) 2026 Cantarivo Labs contributors
 
 ## Third-party audio assets
 
-The following five CC0 tracks are bundled only in the Android private-pilot audio playtest. They are manually selected while parked, play locally through the device’s existing audio route, and are not used for song recognition, lyric display, or analytics.
+The following five CC0 tracks are bundled only in the Android preview audio playtest. They are manually selected in a stationary controlled test environment, play locally through the device’s existing audio route, and are not used for song recognition, lyric display, or analytics.
 
 - “Fouler l'horizon” — Komiku — CC0 1.0 — [source](https://freemusicarchive.org/music/Komiku/Its_time_for_adventure_/Komiku_-_Its_time_for_adventure_-_01_Fouler_lhorizon/)
 - “Le Grand Village” — Komiku — CC0 1.0 — [source](https://freemusicarchive.org/music/Komiku/Its_time_for_adventure_/Komiku_-_Its_time_for_adventure_-_02_Le_Grand_Village/)

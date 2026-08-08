@@ -2,16 +2,19 @@
   "name": "cantarivo",
   "version": "0.2.0",
   "private": true,
+  "packageManager": "pnpm@11.16.0",
   "description": "Cantarivo, a local-first, privacy-minded singing companion from Cantarivo Labs.",
   "scripts": {
     "start": "npx --yes serve . -l 4184",
     "check:catalog": "node scripts/validate-catalog.mjs && node scripts/validate-cc0-research-catalog.mjs",
     "catalog:research": "node scripts/build-cc0-research-catalog.mjs",
-    "catalog:import-pilot": "node scripts/import-cc0-private-pilot-tracks.mjs",
+    "catalog:import-preview": "node scripts/import-cc0-preview-tracks.mjs",
     "mobile:build": "node scripts/build-mobile.mjs",
     "android:sync": "node scripts/sync-android.mjs",
     "check:android-privacy": "node scripts/verify-android-voice-policy.mjs",
-    "check:androidx": "node scripts/verify-androidx.mjs"
+    "check:androidx": "node scripts/verify-androidx.mjs",
+    "build:public-site": "node scripts/build-public-site.mjs",
+    "check:secrets": "node scripts/scan-secrets.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^8.0.0",

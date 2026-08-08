@@ -66,12 +66,12 @@ const state = {
   settingsHistoryOpen: false,
 };
 
-const privatePilotTracks = [
-  { id: "fouler-l-horizon", title: "Fouler l'horizon", creator: "Komiku", source: "assets/music/private-pilot/fouler-l-horizon.mp3" },
-  { id: "le-grand-village", title: "Le Grand Village", creator: "Komiku", source: "assets/music/private-pilot/le-grand-village.mp3" },
-  { id: "barque-sur-le-lac", title: "Barque sur le lac", creator: "Komiku", source: "assets/music/private-pilot/barque-sur-le-lac.mp3" },
-  { id: "la-citadelle", title: "La Citadelle", creator: "Komiku", source: "assets/music/private-pilot/la-citadelle.mp3" },
-  { id: "la-ville-aux-ponts-suspendus", title: "La ville aux ponts suspendus", creator: "Komiku", source: "assets/music/private-pilot/la-ville-aux-ponts-suspendus.mp3" },
+const previewTracks = [
+  { id: "fouler-l-horizon", title: "Fouler l'horizon", creator: "Komiku", source: "assets/music/cc0-playtest/fouler-l-horizon.mp3" },
+  { id: "le-grand-village", title: "Le Grand Village", creator: "Komiku", source: "assets/music/cc0-playtest/le-grand-village.mp3" },
+  { id: "barque-sur-le-lac", title: "Barque sur le lac", creator: "Komiku", source: "assets/music/cc0-playtest/barque-sur-le-lac.mp3" },
+  { id: "la-citadelle", title: "La Citadelle", creator: "Komiku", source: "assets/music/cc0-playtest/la-citadelle.mp3" },
+  { id: "la-ville-aux-ponts-suspendus", title: "La ville aux ponts suspendus", creator: "Komiku", source: "assets/music/cc0-playtest/la-ville-aux-ponts-suspendus.mp3" },
 ];
 
 const supportFaqs = [
@@ -752,7 +752,7 @@ function updateDashboard() {
 }
 
 function activeMusicTrack() {
-  return privatePilotTracks.find((track) => track.id === state.playingMusicTrackId);
+  return previewTracks.find((track) => track.id === state.playingMusicTrackId);
 }
 
 function updateMusicPlaytest() {
@@ -793,7 +793,7 @@ function requestMusicPlaytest(trackId) {
     showToast("End the current session before changing tracks. The selected track can continue during a singing session.");
     return;
   }
-  if (!privatePilotTracks.some((track) => track.id === trackId)) return;
+  if (!previewTracks.some((track) => track.id === trackId)) return;
   if (!state.musicPlaytestApproved) {
     state.pendingMusicTrackId = trackId;
     elements.musicPlaytestDialog.showModal();
@@ -804,7 +804,7 @@ function requestMusicPlaytest(trackId) {
 }
 
 async function playMusicTrack(trackId) {
-  const track = privatePilotTracks.find((entry) => entry.id === trackId);
+  const track = previewTracks.find((entry) => entry.id === trackId);
   if (!track || !state.musicPlayer) return;
   if (state.playingMusicTrackId === track.id && !state.musicPlayer.paused) {
     stopMusicPlaytest();

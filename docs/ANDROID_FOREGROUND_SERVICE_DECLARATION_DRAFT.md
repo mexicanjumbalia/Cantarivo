@@ -11,21 +11,21 @@ This draft matches the current local Android build. Re-check the final Android A
 
 **Feature description**
 
-Cantarivo is a user-started singing companion with an optional drive mode. After the user starts a drive while the activity is visible, reads the in-app microphone/background explanation, and grants `RECORD_AUDIO`, the app performs ephemeral local sound-level and possible-vocal-like signal analysis. The foreground service lets that current drive continue while navigation or another app is visible. Audio is not recorded, saved, transcribed, identified, uploaded, or shared.
+Cantarivo is a user-started singing companion with an optional session mode. After the user starts a session while the activity is visible, reads the in-app microphone/background explanation, and grants `RECORD_AUDIO`, the app performs ephemeral local sound-level and possible-vocal-like signal analysis. The foreground service lets that current session continue while navigation or another app is visible. Audio is not recorded, saved, transcribed, identified, uploaded, or shared.
 
 **Why immediate, uninterrupted execution matters**
 
-Deferring or stopping the service would make the explicitly started drive session lose its local sound context and require the driver to reopen parked setup. The app nevertheless yields to Android for calls and higher-priority microphone users. It either restores the same drive after the interruption or waits for manual resume, based on the visible setting.
+Deferring or stopping the service would make the explicitly started singing session lose its local sound context and require the user to reopen stationary test setup. The app nevertheless yields to Android for calls and higher-priority microphone users. It either restores the same session after the interruption or waits for manual resume, based on the visible setting.
 
 **How the user starts and stops it**
 
-The user starts it from the visible **Start a drive > Turn on local listening** flow. The ongoing notification shows **Pause/Resume listening** and **End drive**. The app also provides **End drive** and **Silence / Stop** controls. It is not started at boot, from a background receiver, or by a hidden retry.
+The user starts it from the visible **Start a session > Turn on local listening** flow. The ongoing notification shows **Pause/Resume listening** and **End session**. The app also provides **End session** and **Silence / Stop** controls. It is not started at boot, from a background receiver, or by a hidden retry.
 
 ### Media playback — Media Playback
 
 **Feature description**
 
-When the user separately chooses **Allow for this drive** and enables wordless harmony or local AI vocal cues, the same foreground service can play a short, non-lyrical, on-device synthetic cue after a limited possible-vocal-like event. It does not stream music, clone a voice, imitate an artist, or use a cloud AI provider.
+When the user separately chooses **Allow for this session** and enables wordless harmony or local AI vocal cues, the same foreground service can play a short, non-lyrical, on-device synthetic cue after a limited possible-vocal-like event. It does not stream music, clone a voice, imitate an artist, or use a cloud AI provider.
 
 **Why immediate execution matters**
 
@@ -33,21 +33,21 @@ The cue is time-sensitive to the local event. If Android audio focus is unavaila
 
 **How the user controls it**
 
-Companion output requires a separate per-drive choice and can be disabled through **Keep companion quiet**, the Settings toggles, **Silence / Stop**, **End drive**, or the notification's **End drive** action.
+Companion output requires a separate per-session choice and can be disabled through **Keep companion quiet**, the Settings toggles, **Silence / Stop**, **End session**, or the notification's **End session** action.
 
 ## Demonstration-video checklist
 
-Record a fresh-install video on a physical Android device while parked or on a bench. Do not include private calls, voices, notifications, addresses, or account data.
+Record a fresh-install video on a physical Android device in a stationary controlled test environment or on a bench. Do not include private calls, voices, notifications, addresses, or account data.
 
 1. Show the app closed with no microphone indicator and no Cantarivo notification.
-2. Open the app, confirm adult private-pilot access, and tap **Start a drive**.
-3. Show the in-app disclosure, including current-drive duration and background notification scope.
+2. Open the app, confirm adult preview access, and tap **Start a session**.
+3. Show the in-app disclosure, including current-session duration and background notification scope.
 4. Grant microphone permission and, on Android 13+, choose a notification-permission outcome.
-5. Show the ongoing notification and its **Pause/Resume listening** and **End drive** actions.
+5. Show the ongoing notification and its **Pause/Resume listening** and **End session** actions.
 6. Put navigation or another non-recording app on top; show that the notification and microphone indicator remain visible.
-7. Use notification **Pause**, show the microphone indicator clear, then **Resume** without repeating parked setup.
+7. Use notification **Pause**, show the microphone indicator clear, then **Resume** without repeating stationary test setup.
 8. Demonstrate a controlled call/communication or competing-microphone interruption with no personal information visible; show Cantarivo pause and configured automatic or manual resume.
-9. Return to the app and use **Silence / Stop** or notification **End drive**; show the microphone indicator and ongoing notification disappear.
+9. Return to the app and use **Silence / Stop** or notification **End session**; show the microphone indicator and ongoing notification disappear.
 
 ## Pre-submission checks
 

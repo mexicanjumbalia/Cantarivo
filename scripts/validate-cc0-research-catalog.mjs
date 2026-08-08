@@ -41,9 +41,9 @@ for (const [index, entry] of (catalog.entries ?? []).entries()) {
   if (entry.compositionLicense !== "CC0-1.0" || entry.recordingLicense !== "CC0-1.0") fail(`${label} must document CC0 for both composition and recording.`);
   if (entry.licenseUrl !== "https://creativecommons.org/publicdomain/zero/1.0/") fail(`${label}.licenseUrl must be the canonical CC0 page.`);
   if (!/^https:\/\//.test(entry.sourceUrl ?? "") || !/^https:\/\//.test(entry.sourceCollectionUrl ?? "")) fail(`${label} requires secure source URLs.`);
-  if (!["documented-candidate", "private-pilot-playtest"].includes(entry.catalogStatus)) fail(`${label}.catalogStatus is not recognized.`);
+  if (!["documented-candidate", "preview-playtest"].includes(entry.catalogStatus)) fail(`${label}.catalogStatus is not recognized.`);
 }
 
 if (process.exitCode) process.exit(process.exitCode);
-const pilotCount = catalog.entries.filter((entry) => entry.catalogStatus === "private-pilot-playtest").length;
-console.log(`CC0 research catalog check passed: ${catalog.entries.length - pilotCount} documented candidates and ${pilotCount} private-pilot track(s).`);
+const previewCount = catalog.entries.filter((entry) => entry.catalogStatus === "preview-playtest").length;
+console.log(`CC0 research catalog check passed: ${catalog.entries.length - previewCount} documented candidates and ${previewCount} preview track(s).`);
