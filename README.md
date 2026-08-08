@@ -63,27 +63,15 @@ Then open [http://localhost:4184](http://localhost:4184) in a browser. This temp
 
 ## Singing companion direction
 
-The preview is deliberately **button-first**: people can plainly allow the demo companion, keep it quiet, or end a singing session. Every companion decision expires when the session ends. The Android app uses a user-started foreground service for the active session, so local sound analysis can continue under other apps while an ongoing notification provides Pause/Resume and End session controls. Calls and higher-priority microphone use pause both analysis and the app's own companion cue; the same session resumes automatically only while the visible setting remains enabled. No phone-state or call-log permission is requested. The native, on-device signal gate sends the interface only an instantaneous numeric level, a narrow event, and an ephemeral coarsely rounded pitch. It never sends audio, a transcript, or a voiceprint and cannot distinguish the user from music, other people, or background noise. The separate one-command Android speech recognizer remains bounded, foreground-only, and has no cloud fallback or wake word. The browser demo remains foreground-only. See the [scope document](docs/SINGING_COMPANION_SCOPE.md), [audio research and integration record](docs/OPEN_SOURCE_AUDIO_RESEARCH.md), [Android Studio handoff](docs/ANDROID_STUDIO_HANDOFF.md), the [native speech privacy and device test plan](docs/NATIVE_SPEECH_PRIVACY_AND_DEVICE_TEST_PLAN.md), and the [Android device setup guide](docs/ANDROID_PREVIEW_DEVICE_SETUP.md).
+The preview is deliberately **button-first**: people can plainly allow the demo companion, keep it quiet, or end a singing session. Every companion decision expires when the session ends. The browser demo remains foreground-only and performs local sound-level analysis only after a clear, current-session choice. It does not record, transcribe, identify, retain, or upload audio. See the [scope document](docs/SINGING_COMPANION_SCOPE.md), [audio research and integration record](docs/OPEN_SOURCE_AUDIO_RESEARCH.md), and the [privacy policy](privacy.html).
 
 ## Future recognition and artist-library integrations
 
 The [`integrations/recognition`](integrations/recognition/) folder is the controlled extension point for future song recognition, metadata resolution, artist-approved libraries, and voice-companion adapters. It includes provider contracts, an asset metadata schema, and a rights checklist. A future adapter may work with an official provider API or a direct partner feed from services such as Spotify, Apple Music, Speechify, a label, a studio, or an independent artist; it must not scrape consumer applications or infer permission from a match alone. No provider is integrated in version 0.2, and no protected catalog audio is bundled.
 
-## Android preview (Windows)
+## Browser preview and current updates
 
-The project now contains a locally buildable Capacitor Android app. Open the `android` folder in Android Studio after running `pnpm android:sync`; see [Android Studio handoff](docs/ANDROID_STUDIO_HANDOFF.md). After the project-local tools have been set up, build a debug APK with:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\build-android-debug.ps1
-```
-
-Connect one owner-controlled Android phone with USB debugging approved, then use the deliberately confirmed installer:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\install-android-debug.ps1
-```
-
-It refuses to select among multiple devices and requires `INSTALL` before changing a phone. Follow the [device setup guide](docs/ANDROID_PREVIEW_DEVICE_SETUP.md).
+Use the public GitHub Pages site for the current Cantarivo preview, privacy materials, and project updates. To run the same browser experience locally, start a static server with `npm start` and open the displayed local URL. GitHub Pages is built from an explicit allowlist into `public-site/`; the deployment does not publish the repository root or development files.
 
 ## Privacy and safety
 
@@ -113,7 +101,7 @@ node scripts/scan-secrets.mjs
 
 The check fails if a catalog entry is missing its provenance or is not CC0 for both the musical composition and the sound recording.
 
-The release workflow also runs Android privacy and AndroidX checks, a debug Android build, a tracked-file secret scan, and a pnpm audit. Read [Main-branch protection](docs/BRANCH_PROTECTION.md) before merging a release.
+The release workflow runs browser, catalog, public-site, tracked-file secret, and dependency-audit checks. Read [Main-branch protection](docs/BRANCH_PROTECTION.md) before merging a release.
 
 ## Project map
 
@@ -131,12 +119,8 @@ Cantarivo/
   docs/PROJECT_RIGHTS_AND_COMMERCIAL_LICENSING.md # Code/IP policy
   docs/SINGING_COMPANION_SCOPE.md      # Scope for session and native voice-command boundaries
   docs/NATIVE_SPEECH_PRIVACY_AND_DEVICE_TEST_PLAN.md # Native speech privacy and physical-device test checklist
-  docs/ANDROID_PREVIEW_DEVICE_SETUP.md # Owner-controlled Android installation and test checklist
-  docs/ANDROID_STUDIO_HANDOFF.md # Transfer and Android Studio setup guide
   docs/OPEN_SOURCE_AUDIO_RESEARCH.md # Verified local-audio options and integration gates
   integrations/recognition/         # Future metadata/recognition adapters and partner asset contracts
-  scripts/build-android-debug.ps1 # Reproducible low-memory Android debug build
-  scripts/install-android-debug.ps1 # Confirmed single-device preview installer
   docs/PRIVACY_LEGAL_REVIEW_NOTES.md # Federal/state privacy issue-spotting and release-review gate
   scripts/validate-catalog.mjs   # Catalog compliance check
   .github/workflows/             # License guard and GitHub Pages deployment
