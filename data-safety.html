@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#091A2C" />
+    <meta name="description" content="Draft Google Play Data Safety disclosure for Cantarivo." />
+    <title>Data Safety Review | Cantarivo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell support-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Return to Cantarivo">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M6 20.5V17a10 10 0 0 1 20 0v3.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" />
+              <path d="M4 20.5h5.5v4H7a3 3 0 0 1-3-3v-1Z M28 20.5h-5.5v4H25a3 3 0 0 0 3-3v-1Z" fill="currentColor" />
+              <path d="M16 8.5v10m0 0 3-2.2m-3 2.2-3-2.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span>cantarivo</span>
+        </a>
+        <a class="back-link" href="privacy.html">Privacy policy</a>
+      </header>
+
+      <main class="policy-page">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> DRAFT — NOT SUBMITTED TO GOOGLE PLAY</p>
+        <h1>Data Safety<br /><em>review sheet.</em></h1>
+        <p class="policy-meta">Prepared August 2, 2026 · Public developer: Cantarivo Labs · Play Store title: Cantarivo: Singing Companion</p>
+        <p class="policy-meta">Cantarivo Labs LLC is the intended legal publisher name; formation must be accepted before it is listed as an active LLC.</p>
+
+        <section class="policy-content" aria-labelledby="currentAnswersTitle">
+          <h2 id="currentAnswersTitle">Current Android preview answers</h2>
+          <p>These answers apply only to the current binary: no account, no analytics or advertising SDK, no <code>INTERNET</code> permission, local AI vocal cues only, and microphone samples processed and discarded on the device. Re-check the final app bundle and every included SDK before submitting.</p>
+          <p>The Android build declares microphone and media-playback foreground-service types so a user-started singing session can continue under other apps with an ongoing notification. It does not request phone-state or call-log access. Calls are handled only as temporary Android audio interruptions, without caller or call metadata.</p>
+          <table>
+            <thead><tr><th>Play Console question</th><th>Draft answer for the current build</th></tr></thead>
+            <tbody>
+              <tr><td>Does the app collect or share any required user data?</td><td><strong>No.</strong> The current app does not transmit user data off the device.</td></tr>
+              <tr><td>Audio files / voice or sound recordings</td><td><strong>Not collected or shared.</strong> The microphone is used for ephemeral on-device level and signal processing; raw samples are not saved or transmitted.</td></tr>
+              <tr><td>Location, contacts, identifiers, messages, photos, files, app activity, or diagnostics</td><td><strong>Not collected or shared.</strong></td></tr>
+              <tr><td>Encryption in transit / deletion request</td><td><strong>Not applicable to this build's in-app data.</strong> It does not transmit or retain user data and does not offer accounts.</td></tr>
+            </tbody>
+          </table>
+          <p>Google defines collection for this form as transmitting data off the user's device. Processing that remains solely on-device and is never transmitted is not collection for this disclosure. This is not a substitute for reviewing the complete current policy. <a href="https://support.google.com/googleplay/android-developer/answer/10787469?hl=en" rel="noreferrer">Google Play Data Safety guidance</a></p>
+
+          <h2>Do not reuse these answers for a cloud AI singer</h2>
+          <p>If a future AI singer sends microphone audio, a recording, a transcript, a prompt, an identifier, or telemetry to a provider, this table becomes inaccurate. The developer must update the privacy policy, prominent in-app disclosure, Data Safety answers, consent flow, supplier review, retention/deletion process, and security assessment <strong>before</strong> enabling that version.</p>
+          <p>At minimum, a cloud-audio design would require a new review of <strong>Audio files: voice or sound recordings</strong>; whether it is collected and shared; the exact provider; app-functionality purpose; encryption in transit; retention; deletion; and whether the feature is optional. Do not guess at those answers: obtain them from the signed provider terms and the exact SDK/model behavior.</p>
+
+          <h2>Publisher review form</h2>
+          <p>This form is intentionally not submitted anywhere and does not save answers. Use it as a release checklist.</p>
+          <form aria-label="Data Safety release review form">
+            <fieldset class="permission-options">
+              <legend>Confirm each item before submission</legend>
+              <label class="radio-option"><input type="checkbox" /><span><strong>Binary checked</strong><small>The final Android App Bundle, manifest, dependency list, and network behavior match these answers.</small></span></label>
+              <label class="radio-option"><input type="checkbox" /><span><strong>Provider checked</strong><small>Every SDK, AI model, host, and support service has documented its data handling and license.</small></span></label>
+              <label class="radio-option"><input type="checkbox" /><span><strong>Policy checked</strong><small>The public privacy-policy URL is active, non-geofenced, and names the publisher or app plus a privacy contact.</small></span></label>
+              <label class="radio-option"><input type="checkbox" /><span><strong>Consent checked</strong><small>Any unexpected sensitive-data use has a clear in-app disclosure immediately before the system permission or provider activation.</small></span></label>
+              <label class="radio-option"><input type="checkbox" /><span><strong>Answers approved</strong><small>The publisher, not this draft, is responsible for accurate final Play Console answers.</small></span></label>
+            </fieldset>
+          </form>
+
+          <h2>Related review material</h2>
+          <p>Read the <a href="privacy.html">Privacy Policy</a>, <a href="ai-vocal-companion.html">AI vocal companion activation form</a>, and repository foreground-service declaration draft together. The GitHub Pages privacy/support URL plan is included in the repository review packet. This page is a planning aid, not legal advice.</p>
+        </section>
+      </main>
+
+      <footer>
+        <span>CANTARIVO · RELEASE REVIEW</span>
+        <span><a href="index.html">Demo</a> · <a href="privacy.html">Privacy policy</a> · No form submission from this page</span>
+      </footer>
+    </div>
+  </body>
+</html>

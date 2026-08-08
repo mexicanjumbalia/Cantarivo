@@ -1,0 +1,42 @@
+[
+  {
+    "provider_id": "spotify",
+    "display_name": "Spotify",
+    "status": "planned",
+    "integration_mode": "official_api_or_partner_feed_only",
+    "metadata_scope": ["track_id", "title", "artist", "album", "isrc", "available_markets"],
+    "audio_scope": "no_audio_copy_or_scrape",
+    "voice_scope": "artist_approval_and_separate_license_required",
+    "notes": "Use only documented APIs and terms. A track match does not grant playback, lyric, remix, training, or synthetic-vocal rights."
+  },
+  {
+    "provider_id": "apple_music",
+    "display_name": "Apple Music",
+    "status": "planned",
+    "integration_mode": "official_api_or_partner_feed_only",
+    "metadata_scope": ["catalog_id", "title", "artist", "album", "isrc", "storefront"],
+    "audio_scope": "no_audio_copy_or_scrape",
+    "voice_scope": "artist_approval_and_separate_license_required",
+    "notes": "Storefront, catalog, playback, lyrics, and artist-voice rights are separate questions and must be verified independently."
+  },
+  {
+    "provider_id": "speechify",
+    "display_name": "Speechify",
+    "status": "planned",
+    "integration_mode": "documented_partner_api_only",
+    "metadata_scope": ["voice_id", "voice_display_name", "language", "provider_terms"],
+    "audio_scope": "no_voice_asset_copy_without_license",
+    "voice_scope": "voice_provider_and_performer_permission_required",
+    "notes": "Speech and singing are distinct uses. A text-to-speech voice permission does not automatically authorize singing, transformation, or model training."
+  },
+  {
+    "provider_id": "direct_artist_or_studio_feed",
+    "display_name": "Artist or studio partner feed",
+    "status": "planned",
+    "integration_mode": "signed_partner_feed",
+    "metadata_scope": ["asset_id", "artist", "producer", "songwriter_composer", "publisher", "isrc", "territory", "term"],
+    "audio_scope": "only_assets_and_formats_explicitly_licensed",
+    "voice_scope": "explicit_vocal_and_synthetic_vocal_terms_required",
+    "notes": "Preferred path for artist-designed experiences, original vocal content, stems, harmonies, hooks, and other approved components."
+  }
+]

@@ -1,10 +1,24 @@
 {
-  "name": "driver-companion",
-  "version": "1.0.0",
+  "name": "cantarivo",
+  "version": "0.2.0",
   "private": true,
-  "description": "A local-first, driver-safe sing-along companion with a CC0-only music catalog policy.",
+  "description": "Cantarivo, a local-first, privacy-minded singing companion from Cantarivo Labs.",
   "scripts": {
     "start": "npx --yes serve . -l 4184",
-    "check:catalog": "node scripts/validate-catalog.mjs"
+    "check:catalog": "node scripts/validate-catalog.mjs && node scripts/validate-cc0-research-catalog.mjs",
+    "catalog:research": "node scripts/build-cc0-research-catalog.mjs",
+    "catalog:import-pilot": "node scripts/import-cc0-private-pilot-tracks.mjs",
+    "mobile:build": "node scripts/build-mobile.mjs",
+    "android:sync": "node scripts/sync-android.mjs",
+    "check:android-privacy": "node scripts/verify-android-voice-policy.mjs",
+    "check:androidx": "node scripts/verify-androidx.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/app": "8.0.0",
+    "@capacitor/core": "^8.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.0.0"
   }
 }

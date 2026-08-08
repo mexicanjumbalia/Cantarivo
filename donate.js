@@ -8,7 +8,7 @@ if (isVerifiedHttpsUrl) {
   const copy = document.querySelector("[data-funding-copy]");
   const link = document.querySelector("[data-funding-link]");
   title.textContent = `Support is available through ${provider}.`;
-  copy.textContent = "Support is optional. Selecting the button opens the provider’s own secure page in a new tab; Driver Companion does not receive payment details.";
+  copy.textContent = "Support is optional. Selecting the button opens the provider’s own secure page in a new tab; Cantarivo does not receive payment details.";
   link.href = fundingUrl;
   link.hidden = false;
 }

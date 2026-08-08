@@ -1,2 +1,15 @@
-.DS_Store
 node_modules/
+mobile/www/
+mobile/www-playtest/
+mobile/www-safety-control/
+mobile/www-theme-picker/
+android/.gradle/
+android/.idea/
+android/app/build/
+android/build/
+android/local.properties
+android/captures/
+tools/
+private-license-records/
+work/
+android/gradle/*.backup

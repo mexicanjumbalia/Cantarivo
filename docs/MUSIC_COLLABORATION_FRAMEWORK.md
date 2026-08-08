@@ -4,7 +4,7 @@
 
 ## The creative brief
 
-Driver Companion is interested in original, consent-led vocal moments that can make a driver's sing-along feel more companionable without distracting from the road. We welcome conversations with vocalists, writers, producers, and labels that can document the rights needed for an app experience.
+Cantarivo is interested in original, consent-led vocal moments that can make singing feel more companionable. We welcome conversations with vocalists, writers, producers, and labels that can document the rights needed for an app experience.
 
 For an initial collaboration discussion, contact [drivercompanionsuppteam1@gmail.com](mailto:drivercompanionsuppteam1@gmail.com). Please send a short rights summary first; do not send audio files before a rights path has been agreed in writing.
 
@@ -42,8 +42,21 @@ Musical compositions and sound recordings are separate works and can be owned by
 
 Use the [Producer and Vocalist Collaboration Term Sheet](PRODUCER_VOCALIST_TERM_SHEET_TEMPLATE.md) to organize the early discussion. It is deliberately nonbinding; a final agreement needs legal review and signatures from the actual rightsholders.
 
+## Deferred synchronized-vocal experience
+
+Cantarivo may later offer an opt-in, rights-cleared listening mode that pairs a song's authorized master or backing track with the vocalist's own original raw vocal or stems. The goal is authentic, timing-aligned playback; it is not singer imitation, voice cloning, music recognition, or a substitute for a performer's consent.
+
+This is deferred until after the initial private pilot. Before implementation:
+
+1. Use a written agreement that separately covers the song/master or backing track, raw vocal or stems, composition and lyrics, performer/voice consent, and every sample or session contribution.
+2. Require delivery metadata: BPM, time signature, sample rate, channel layout, a fixed start offset or beat grid, and approved mix/stem versions.
+3. Precompute timing locally and test drift and latency across phone speakers and Bluetooth/car audio. Do not use microphone capture of the driver or passengers for alignment.
+4. Let the driver select the experience while parked; never auto-start it or offer timing/mix controls while moving. Keep an immediate stop/quiet control.
+5. Keep raw vocal files local unless a future written agreement and privacy review specifically authorize a different path. Do not retain driver or passenger audio.
+6. Treat this as a production-audio and rights feature: it needs device testing, audio-focus/interrupt handling, accessibility review, and legal/store review before public release.
+
 ## Plain-language invitation copy
 
-> Driver Companion is exploring original, rights-cleared vocal collaborations for an opt-in in-car singing companion. We are looking for artists and producers who control, or can document authority for, both the song and the specific recording. We do not accept unlicensed material, covers, samples without clearance, or voice-clone content. Any use would begin only after a rights review and a written agreement that clearly covers the recording, composition, performer consent, credit, compensation, and opt-in app use.
+> Cantarivo is exploring original, rights-cleared vocal collaborations for an opt-in singing companion. We are looking for artists and producers who control, or can document authority for, both the song and the specific recording. We do not accept unlicensed material, covers, samples without clearance, or voice-clone content. Any use would begin only after a rights review and a written agreement that clearly covers the recording, composition, performer consent, credit, compensation, and opt-in app use.
 
 No partner is asked to waive rights by participating in a conversation. Each collaboration should be reviewed independently by qualified counsel before any audio is delivered or used.

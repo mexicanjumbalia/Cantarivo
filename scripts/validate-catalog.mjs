@@ -1,6 +1,10 @@
-import { readFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { access, readFile } from "node:fs/promises";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const catalogPath = new URL("../content/music-catalog.json", import.meta.url);
+const projectRoot = fileURLToPath(new URL("../", import.meta.url));
 const requiredFields = [
   "id",
   "title",
@@ -12,6 +16,12 @@ const requiredFields = [
   "containsLyrics",
   "containsThirdPartySamples",
   "rightsStatement",
+];
+const privatePilotFields = [
+  ...requiredFields,
+  "catalogStatus",
+  "mediaPath",
+  "fileSha256",
 ];
 
 const fail = (message) => {
@@ -53,5 +63,33 @@ if (!Array.isArray(catalog.tracks)) {
   });
 }
 
+if (catalog.privatePilotTracks !== undefined && !Array.isArray(catalog.privatePilotTracks)) {
+  fail("privatePilotTracks must be an array when present.");
+}
+
+for (const [index, track] of (catalog.privatePilotTracks ?? []).entries()) {
+  const label = `privatePilotTracks[${index}]`;
+  privatePilotFields.forEach((field) => {
+    if (!(field in track)) fail(`${label} is missing ${field}.`);
+  });
+  if (track.compositionLicense !== "CC0-1.0" || track.recordingLicense !== "CC0-1.0") {
+    fail(`${label} must document CC0 for both composition and recording.`);
+  }
+  if (track.catalogStatus !== "private-pilot-playtest") fail(`${label}.catalogStatus must be private-pilot-playtest.`);
+  if (!/^assets\/music\/private-pilot\/[a-z0-9-]+\.mp3$/.test(track.mediaPath ?? "")) fail(`${label}.mediaPath is not an approved private-pilot asset path.`);
+  if (!/^[a-f0-9]{64}$/.test(track.fileSha256 ?? "")) fail(`${label}.fileSha256 must be a SHA-256 checksum.`);
+  if (typeof track.containsLyrics !== "string" || typeof track.containsThirdPartySamples !== "string") {
+    fail(`${label} must state the private-pilot lyric and sample review boundaries.`);
+  }
+  try {
+    const assetPath = resolve(projectRoot, track.mediaPath);
+    await access(assetPath);
+    const actualHash = createHash("sha256").update(await readFile(assetPath)).digest("hex");
+    if (actualHash !== track.fileSha256) fail(`${label}.fileSha256 does not match the local audio file.`);
+  } catch {
+    fail(`${label}.mediaPath does not exist locally.`);
+  }
+}
+
 if (process.exitCode) process.exit(process.exitCode);
-console.log(`Catalog check passed: ${catalog.tracks.length} CC0-only track(s) documented.`);
+console.log(`Catalog check passed: ${catalog.tracks.length} release-ready and ${(catalog.privatePilotTracks ?? []).length} private-pilot CC0 track(s) documented.`);

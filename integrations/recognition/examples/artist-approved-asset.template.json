@@ -1,0 +1,28 @@
+{
+  "asset_id": "CANTARIVO-PARTNER-TEMPLATE-001",
+  "title": "Replace with approved asset title",
+  "asset_type": "metadata_only",
+  "artist": "Artist or group name",
+  "producer": "Producer name or TBD",
+  "songwriter_composer": "Writer/composer name or TBD",
+  "publisher": "Publisher or administrator or TBD",
+  "provider_references": [],
+  "territories": ["Worldwide - verify"],
+  "rights": {
+    "permitted_uses": [],
+    "prohibited_uses": ["Any use not expressly listed in the signed agreement"],
+    "training_model_permission": "not_granted",
+    "synthetic_vocal_permission": "not_granted",
+    "interactive_use": false,
+    "non_interactive_use": false,
+    "remix_or_transformation": false
+  },
+  "approval": {
+    "approver": "TBD",
+    "approved_at": "2099-01-01T00:00:00Z",
+    "approval_reference": "Replace with contract or permission record",
+    "attribution": "Replace with required attribution",
+    "removal_contact": "rights@example.invalid",
+    "termination_procedure": "Replace with documented removal and termination procedure"
+  }
+}

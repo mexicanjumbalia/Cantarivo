@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cantarivo.example/schemas/artist-library.schema.json",
+  "title": "Cantarivo artist library asset",
+  "type": "object",
+  "required": ["asset_id", "title", "asset_type", "rights", "approval"],
+  "properties": {
+    "asset_id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "asset_type": { "enum": ["master_recording", "composition", "vocal_stem", "harmony", "melodic_phrase", "hook", "ad_lib", "vocal_effect", "call_and_response", "spoken_phrase", "character_performance", "acapella", "background_vocal", "other_original_vocal_performance", "metadata_only"] },
+    "artist": { "type": "string" },
+    "producer": { "type": "string" },
+    "songwriter_composer": { "type": "string" },
+    "publisher": { "type": "string" },
+    "isrc": { "type": "string" },
+    "iswc": { "type": "string" },
+    "provider_references": { "type": "array", "items": { "type": "object", "required": ["provider_id", "reference_id"], "properties": { "provider_id": { "type": "string" }, "reference_id": { "type": "string" } }, "additionalProperties": false } },
+    "territories": { "type": "array", "items": { "type": "string" } },
+    "term": { "type": "object", "properties": { "starts_on": { "type": "string", "format": "date" }, "ends_on": { "type": "string", "format": "date" } }, "additionalProperties": false },
+    "rights": { "type": "object", "required": ["permitted_uses", "prohibited_uses", "training_model_permission", "synthetic_vocal_permission"], "properties": { "permitted_uses": { "type": "array", "items": { "type": "string" } }, "prohibited_uses": { "type": "array", "items": { "type": "string" } }, "training_model_permission": { "enum": ["not_granted", "granted", "negotiable", "unknown"] }, "synthetic_vocal_permission": { "enum": ["not_granted", "granted", "negotiable", "unknown"] }, "interactive_use": { "type": "boolean" }, "non_interactive_use": { "type": "boolean" }, "remix_or_transformation": { "type": "boolean" } }, "additionalProperties": false },
+    "approval": { "type": "object", "required": ["approver", "approved_at", "removal_contact"], "properties": { "approver": { "type": "string" }, "approved_at": { "type": "string", "format": "date-time" }, "approval_reference": { "type": "string" }, "attribution": { "type": "string" }, "removal_contact": { "type": "string", "format": "email" }, "termination_procedure": { "type": "string" } }, "additionalProperties": false }
+  },
+  "additionalProperties": false
+}

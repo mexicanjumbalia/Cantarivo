@@ -1,4 +1,4 @@
-# Contributing to Driver Companion
+# Contributing to Cantarivo
 
 Thank you for helping build a safer, consent-led singing companion.
 
