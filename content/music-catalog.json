@@ -1,7 +1,86 @@
 {
   "schemaVersion": 1,
-  "catalogName": "Driver Companion open music catalog",
+  "catalogName": "Cantarivo open music catalog",
   "catalogLicensePolicy": "CC0-1.0 only",
-  "allowedLicenses": ["CC0-1.0"],
-  "tracks": []
+  "allowedLicenses": [
+    "CC0-1.0"
+  ],
+  "tracks": [],
+  "privatePilotTracks": [
+    {
+      "id": "cc0-komiku-fouler-l-horizon-140389",
+      "title": "Fouler l'horizon",
+      "creator": "Komiku",
+      "sourceUrl": "https://freemusicarchive.org/music/Komiku/Its_time_for_adventure_/Komiku_-_Its_time_for_adventure_-_01_Fouler_lhorizon/",
+      "retrievedAt": "2026-07-27",
+      "compositionLicense": "CC0-1.0",
+      "recordingLicense": "CC0-1.0",
+      "containsLyrics": "not displayed or transcribed by the app",
+      "containsThirdPartySamples": "source-level CC0 dedication recorded; no separate sample list supplied",
+      "rightsStatement": "The individual Free Music Archive track page and its collection page displayed CC0 1.0 Universal when this record was retrieved. This is source-license evidence, not a legal warranty.",
+      "catalogStatus": "private-pilot-playtest",
+      "mediaPath": "assets/music/private-pilot/fouler-l-horizon.mp3",
+      "fileSha256": "986c1111be44233ddddd5a61ca3ffaaacb203311f18afd9d5ec89e239e3d572b"
+    },
+    {
+      "id": "cc0-komiku-le-grand-village-140390",
+      "title": "Le Grand Village",
+      "creator": "Komiku",
+      "sourceUrl": "https://freemusicarchive.org/music/Komiku/Its_time_for_adventure_/Komiku_-_Its_time_for_adventure_-_02_Le_Grand_Village/",
+      "retrievedAt": "2026-07-27",
+      "compositionLicense": "CC0-1.0",
+      "recordingLicense": "CC0-1.0",
+      "containsLyrics": "not displayed or transcribed by the app",
+      "containsThirdPartySamples": "source-level CC0 dedication recorded; no separate sample list supplied",
+      "rightsStatement": "The individual Free Music Archive track page and its collection page displayed CC0 1.0 Universal when this record was retrieved. This is source-license evidence, not a legal warranty.",
+      "catalogStatus": "private-pilot-playtest",
+      "mediaPath": "assets/music/private-pilot/le-grand-village.mp3",
+      "fileSha256": "f8a64cc1209f9efbbe1a1f437c18d1eed0758ea8a3cf0e0dbc650c87f43b6ab9"
+    },
+    {
+      "id": "cc0-komiku-barque-sur-le-lac-140392",
+      "title": "Barque sur le lac",
+      "creator": "Komiku",
+      "sourceUrl": "https://freemusicarchive.org/music/Komiku/Its_time_for_adventure_/Komiku_-_Its_time_for_adventure_-_04_Barque_sur_le_lac/",
+      "retrievedAt": "2026-07-27",
+      "compositionLicense": "CC0-1.0",
+      "recordingLicense": "CC0-1.0",
+      "containsLyrics": "not displayed or transcribed by the app",
+      "containsThirdPartySamples": "source-level CC0 dedication recorded; no separate sample list supplied",
+      "rightsStatement": "The individual Free Music Archive track page and its collection page displayed CC0 1.0 Universal when this record was retrieved. This is source-license evidence, not a legal warranty.",
+      "catalogStatus": "private-pilot-playtest",
+      "mediaPath": "assets/music/private-pilot/barque-sur-le-lac.mp3",
+      "fileSha256": "b6e80f2dffba95a83ad25205d7600a029e747d18bad2d9e1d1557a6c45eeff85"
+    },
+    {
+      "id": "cc0-komiku-la-citadelle-140393",
+      "title": "La Citadelle",
+      "creator": "Komiku",
+      "sourceUrl": "https://freemusicarchive.org/music/Komiku/Its_time_for_adventure_/Komiku_-_Its_time_for_adventure_-_05_La_Citadelle/",
+      "retrievedAt": "2026-07-27",
+      "compositionLicense": "CC0-1.0",
+      "recordingLicense": "CC0-1.0",
+      "containsLyrics": "not displayed or transcribed by the app",
+      "containsThirdPartySamples": "source-level CC0 dedication recorded; no separate sample list supplied",
+      "rightsStatement": "The individual Free Music Archive track page and its collection page displayed CC0 1.0 Universal when this record was retrieved. This is source-license evidence, not a legal warranty.",
+      "catalogStatus": "private-pilot-playtest",
+      "mediaPath": "assets/music/private-pilot/la-citadelle.mp3",
+      "fileSha256": "98e6186a85ad737571c3d1b67721371428f497d3b62e6555a34605a33913b4b2"
+    },
+    {
+      "id": "cc0-komiku-la-ville-aux-ponts-suspendus-140394",
+      "title": "La ville aux ponts suspendus",
+      "creator": "Komiku",
+      "sourceUrl": "https://freemusicarchive.org/music/Komiku/Its_time_for_adventure_/Komiku_-_Its_time_for_adventure_-_06_La_ville_aux_ponts_suspendus/",
+      "retrievedAt": "2026-07-27",
+      "compositionLicense": "CC0-1.0",
+      "recordingLicense": "CC0-1.0",
+      "containsLyrics": "not displayed or transcribed by the app",
+      "containsThirdPartySamples": "source-level CC0 dedication recorded; no separate sample list supplied",
+      "rightsStatement": "The individual Free Music Archive track page and its collection page displayed CC0 1.0 Universal when this record was retrieved. This is source-license evidence, not a legal warranty.",
+      "catalogStatus": "private-pilot-playtest",
+      "mediaPath": "assets/music/private-pilot/la-ville-aux-ponts-suspendus.mp3",
+      "fileSha256": "96225590ca58ea67cbbd2c9f79b0aae636a877646cc2dd8966b78731ab35839a"
+    }
+  ]
 }

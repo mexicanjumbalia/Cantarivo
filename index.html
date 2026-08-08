@@ -6,15 +6,15 @@
     <meta name="theme-color" content="#091A2C" />
     <meta
       name="description"
-      content="A privacy-first, driver-safe sing-along companion demo."
+      content="Cantarivo is a privacy-first singing companion from Cantarivo Labs. Their voices sing with you."
     />
-    <title>Driver Companion</title>
+    <title>Cantarivo</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="app-shell">
       <header class="topbar">
-        <a class="brand" href="#top" aria-label="Driver Companion home">
+        <a class="brand" href="#top" aria-label="Cantarivo home">
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none">
               <path d="M6 20.5V17a10 10 0 0 1 20 0v3.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" />
@@ -22,15 +22,15 @@
               <path d="M16 8.5v10m0 0 3-2.2m-3 2.2-3-2.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
-          <span>driver companion</span>
+          <span>cantarivo</span>
         </a>
 
         <div class="drive-chip" id="driveStatus" aria-live="polite">
           <span class="status-dot" aria-hidden="true"></span>
-          <span>Parked · setup mode</span>
+          <span>Ready · setup mode</span>
         </div>
 
-        <button class="icon-button" id="settingsButton" type="button" aria-label="Open privacy controls" aria-controls="privacyPanel" aria-expanded="false">
+        <button class="icon-button" id="settingsButton" type="button" aria-label="Open settings" aria-controls="privacyPanel" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z" stroke="currentColor" stroke-width="1.8" />
             <path d="M19.43 15a1.66 1.66 0 0 0 .33 1.83l.06.06-2 2-.06-.06a1.66 1.66 0 0 0-1.83-.33 1.66 1.66 0 0 0-1 1.52v.09h-2.86v-.09a1.66 1.66 0 0 0-1-1.52 1.66 1.66 0 0 0-1.83.33l-.06.06-2-2 .06-.06A1.66 1.66 0 0 0 7.57 15a1.66 1.66 0 0 0-1.52-1H6v-2.86h.05a1.66 1.66 0 0 0 1.52-1 1.66 1.66 0 0 0-.33-1.83l-.06-.06 2-2 .06.06a1.66 1.66 0 0 0 1.83.33 1.66 1.66 0 0 0 1-1.52V5h2.86v.09a1.66 1.66 0 0 0 1 1.52 1.66 1.66 0 0 0 1.83-.33l.06-.06 2 2-.06.06a1.66 1.66 0 0 0-.33 1.83 1.66 1.66 0 0 0 1.52 1H20v2.86h-.05a1.66 1.66 0 0 0-1.52 1Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
@@ -41,17 +41,17 @@
       <main id="top">
         <section class="hero" aria-labelledby="pageTitle">
           <div>
-            <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAR, YOUR CHORUS</p>
-            <h1 id="pageTitle">Keep the road yours.<br /><em>Keep the song alive.</em></h1>
-            <p class="hero-copy">A quiet co-pilot for the drivers who sing. It listens only when you choose, and it joins only when you say yes.</p>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> LOCAL-FIRST SINGING COMPANION</p>
+            <h1 id="pageTitle">Sing freely.<br /><em>Their voices sing with you.</em></h1>
+            <p class="hero-copy">A consent-led singing companion from Cantarivo Labs. It listens only when you choose, and it responds only after you allow it for the current session.</p>
           </div>
-          <aside class="safety-note" aria-label="Driving safety reminder">
+          <aside class="safety-note" aria-label="Hands-free use reminder">
             <span class="safety-icon" aria-hidden="true">✦</span>
-            <span><strong>Set up while parked.</strong> During a drive, use one-tap controls or let the companion stay quiet.</span>
+            <span><strong>Set it once and sing.</strong> Your microphone preference stays available for later sessions, and the companion remains quiet until you explicitly allow it.</span>
           </aside>
         </section>
 
-        <section class="console-grid" aria-label="Drive controls">
+        <section class="console-grid" aria-label="Singing session controls">
           <article class="main-console" aria-labelledby="consoleTitle">
             <div class="console-topline">
               <p class="label">SING-ALONG COMPANION</p>
@@ -70,26 +70,36 @@
             </div>
 
             <h2 id="consoleTitle" class="console-title">Ready when you are.</h2>
-            <p class="console-copy" id="consoleCopy">Start a drive to choose how your microphone and singing buddy work.</p>
+            <p class="console-copy" id="consoleCopy">Start a singing session, then choose local listening and what the demo companion may do.</p>
 
             <div class="audio-meter" aria-label="Live microphone level" aria-describedby="meterDescription">
               <div class="meter-bars" id="meterBars" aria-hidden="true">
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               </div>
-              <span id="meterDescription">Mic level · not recording</span>
+              <span id="meterDescription">Not listening. Nothing is recorded.</span>
             </div>
 
             <button class="primary-button" id="startDriveButton" type="button">
               <span class="button-icon" aria-hidden="true">▶</span>
-              <span id="startButtonLabel">Start a drive</span>
+              <span id="startButtonLabel">Start singing session</span>
             </button>
 
             <div class="manual-controls" id="manualControls" hidden>
-              <button class="manual-button" id="joinButton" type="button" aria-pressed="false">
-                <span class="soundwave" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-                <span id="joinButtonLabel">Let companion join</span>
+              <p class="control-guide" id="controlGuide">Step 1: Turn on local listening, then choose what the companion may do.</p>
+              <button class="listening-button" id="localListeningButton" type="button">
+                <span class="button-icon" aria-hidden="true">●</span>
+                <span id="localListeningLabel">Turn on local listening</span>
               </button>
-              <button class="quiet-button" id="endDriveButton" type="button">End drive</button>
+              <button class="manual-button" id="joinButton" type="button">
+                <span class="soundwave" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span id="joinButtonLabel">Let demo companion join</span>
+              </button>
+              <button class="quiet-button" id="silenceButton" type="button">Keep companion quiet</button>
+              <button class="voice-button" id="voiceControlButton" type="button" hidden>
+                <span class="button-icon" aria-hidden="true">●</span>
+                <span id="voiceControlLabel">Listen for one voice command</span>
+              </button>
+              <button class="end-drive-button" id="endDriveButton" type="button">End session</button>
             </div>
           </article>
 
@@ -102,7 +112,7 @@
                   <h2 id="hearingTitle">Nothing yet</h2>
                 </div>
               </div>
-              <p id="hearingCopy">Microphone access is off. Your car, your sound.</p>
+              <p id="hearingCopy">Microphone access is off. Your voice, your choice.</p>
               <div class="detection-line" id="detectionLine">
                 <span class="detection-dot"></span><span id="detectionText">Waiting for your choice</span>
               </div>
@@ -113,25 +123,43 @@
                 <span class="card-icon blue" aria-hidden="true">✓</span>
                 <div>
                   <p class="label">SINGING BUDDY</p>
-                  <h2 id="permissionTitle">Always ask first</h2>
+                  <h2 id="permissionTitle">Ask before joining</h2>
                 </div>
               </div>
-              <p id="permissionCopy">If a vocal moment is noticed, you decide whether this companion joins.</p>
-              <button class="text-button" id="permissionButton" type="button">Choose permission <span aria-hidden="true">→</span></button>
+              <p id="permissionCopy">The companion stays quiet unless you allow it for the current session.</p>
+              <div class="quick-permission-options" aria-label="Companion permission choices">
+                <button class="quick-permission-button" type="button" data-quick-permission="ask" aria-pressed="true">
+                  <span>Ask first</span>
+                  <small>Keep the companion quiet until you allow it.</small>
+                </button>
+                <button class="quick-permission-button" type="button" data-quick-permission="drive" aria-pressed="false">
+                  <span>Allow this session</span>
+                  <small>Join only for this singing session.</small>
+                </button>
+                <button class="quick-permission-button" type="button" data-quick-permission="never" aria-pressed="false">
+                  <span>Keep quiet</span>
+                  <small>Keep the companion silent.</small>
+                </button>
+              </div>
+              <button class="text-button" id="permissionButton" type="button">Privacy details <span aria-hidden="true">→</span></button>
             </article>
           </aside>
         </section>
 
-        <section class="lower-grid" aria-label="Driver Companion details">
+        <section class="lower-grid" aria-label="Cantarivo details">
           <article class="demo-card" aria-labelledby="demoTitle">
             <div>
               <p class="label">DEMO AUDIO INTELLIGENCE</p>
-              <h2 id="demoTitle">Try a vocal moment</h2>
-              <p>This demo visualizes voice activity. It does not identify songs, lyrics, or actual singing.</p>
+              <h2 id="demoTitle">Try the local companion</h2>
+              <p>The optional companion is a wordless synthetic harmony tone, not an artist or human voice. It does not identify singers, songs, lyrics, or actual singing.</p>
             </div>
-            <button class="demo-button" id="simulateButton" type="button" disabled>
-              <span class="sparkle" aria-hidden="true">✦</span> Simulate singing
-            </button>
+            <div class="demo-actions">
+              <button class="demo-button" id="simulateButton" type="button" disabled>
+                <span class="sparkle" aria-hidden="true">✦</span> Simulate vocal moment
+              </button>
+              <button class="demo-button" id="testHarmonyButton" type="button" disabled>Test wordless harmony</button>
+              <button class="demo-button" id="testAiVocalButton" type="button" disabled>Test AI vocal cue</button>
+            </div>
           </article>
 
           <article class="privacy-summary" aria-labelledby="privacySummaryTitle">
@@ -139,100 +167,261 @@
             <div>
               <p class="label">PRIVACY AT A GLANCE</p>
               <h2 id="privacySummaryTitle">Local, temporary, yours.</h2>
-              <p>No audio is saved or sent anywhere in this demo. You can stop and clear the current drive at any time.</p>
+              <p>Microphone audio is never saved or sent. A small CC0 playtest catalog stays on this device and can be stopped anytime.</p>
             </div>
-            <button class="text-button" id="privacyButton" type="button">Privacy controls <span aria-hidden="true">→</span></button>
+            <button class="text-button" id="privacyButton" type="button">Settings & privacy controls <span aria-hidden="true">→</span></button>
           </article>
         </section>
 
+        <section class="music-playtest" id="musicPlaytest" aria-labelledby="musicPlaytestTitle">
+          <div class="music-playtest-heading">
+            <div>
+              <p class="label">LOCAL CC0 AUDIO PLAYTEST</p>
+              <h2 id="musicPlaytestTitle">Choose a local playtest track.</h2>
+              <p>Five source-documented CC0 tracks are stored in this preview build. Playback uses your current phone or Bluetooth output. It never starts on its own.</p>
+            </div>
+            <div class="music-playtest-status" id="musicPlaytestStatus" aria-live="polite">No track playing</div>
+          </div>
+          <div class="music-track-list" aria-label="CC0 preview tracks">
+            <button class="music-track" type="button" data-play-track="fouler-l-horizon"><span>Fouler l&apos;horizon</span><small>Komiku</small></button>
+            <button class="music-track" type="button" data-play-track="le-grand-village"><span>Le Grand Village</span><small>Komiku</small></button>
+            <button class="music-track" type="button" data-play-track="barque-sur-le-lac"><span>Barque sur le lac</span><small>Komiku</small></button>
+            <button class="music-track" type="button" data-play-track="la-citadelle"><span>La Citadelle</span><small>Komiku</small></button>
+            <button class="music-track" type="button" data-play-track="la-ville-aux-ponts-suspendus"><span>La ville aux ponts suspendus</span><small>Komiku</small></button>
+          </div>
+          <div class="music-playtest-footer">
+            <p>Preview catalog only. No lyrics are displayed, transcribed, or used for recognition.</p>
+            <button class="secondary-button music-stop-button" id="stopMusicButton" type="button" disabled>Stop music</button>
+          </div>
+        </section>
+
         <section class="how-it-works" aria-labelledby="howItWorksTitle">
-          <p class="label">BUILT FOR THE ROAD</p>
+          <p class="label">BUILT FOR SINGING</p>
           <h2 id="howItWorksTitle">One clear choice at a time.</h2>
           <div class="steps">
-            <article><span>01</span><h3>You start</h3><p>Turn on the microphone only when parked and ready.</p></article>
-            <article><span>02</span><h3>It notices</h3><p>The demo flags a possible vocal moment—never a song or lyric.</p></article>
-            <article><span>03</span><h3>You decide</h3><p>The companion stays quiet until you allow it to join.</p></article>
+            <article><span>01</span><h3>You start</h3><p>Turn on the microphone when you are ready to begin a singing session.</p></article>
+            <article><span>02</span><h3>It notices</h3><p>The demo can flag a possible vocal-like moment—never a singer, song, or lyric.</p></article>
+            <article><span>03</span><h3>You decide</h3><p>The companion stays quiet unless you allow it for the current session.</p></article>
           </div>
         </section>
       </main>
 
       <footer>
-        <span>DRIVER COMPANION · CONCEPT DEMO</span>
-        <span><a href="donate.html">Support the project</a> · Mock audio intelligence · No account required</span>
+        <span>CANTARIVO · SINGING COMPANION PREVIEW</span>
+        <span><a href="privacy.html">Privacy policy</a> · <a href="donate.html">Support the project</a> · Mock audio intelligence · Local CC0 playtest · No account required</span>
+        <span>Release review: <a href="data-safety.html">Data Safety sheet</a> · <a href="ai-vocal-companion.html">AI vocal activation form</a></span>
       </footer>
     </div>
 
-    <aside class="privacy-panel" id="privacyPanel" aria-labelledby="privacyTitle" aria-hidden="true">
+    <button class="emergency-stop" id="emergencyStopButton" type="button" data-emergency-stop aria-label="Silence and stop all active Cantarivo features">
+      <span class="emergency-stop-icon" aria-hidden="true">■</span>
+      <span><strong>Silence / Stop</strong><small>Stops audio and listening</small></span>
+    </button>
+
+    <aside class="privacy-panel" id="privacyPanel" aria-labelledby="settingsTitle" aria-hidden="true">
       <div class="panel-header">
         <div>
           <p class="label">YOUR CONTROLS</p>
-          <h2 id="privacyTitle">Privacy & permission</h2>
+          <h2 id="settingsTitle">Settings</h2>
         </div>
-        <button class="icon-button" id="closeSettingsButton" type="button" aria-label="Close privacy controls">×</button>
+        <button class="icon-button" id="closeSettingsButton" type="button" aria-label="Close settings">×</button>
       </div>
+
+      <div class="settings-tabs" role="tablist" aria-label="Cantarivo settings tabs">
+        <button class="settings-tab" id="settingsTabPrivacy" type="button" role="tab" aria-selected="true" aria-controls="settingsPanelPrivacy" data-settings-tab="privacy">Privacy Policy</button>
+        <button class="settings-tab" id="settingsTabFaq" type="button" role="tab" aria-selected="false" aria-controls="settingsPanelFaq" data-settings-tab="faq">FAQ</button>
+        <button class="settings-tab" id="settingsTabContact" type="button" role="tab" aria-selected="false" aria-controls="settingsPanelContact" data-settings-tab="contact">Contact</button>
+      </div>
+
+      <div class="settings-tab-panel" id="settingsPanelPrivacy" role="tabpanel" aria-labelledby="settingsTabPrivacy" data-settings-tab-panel="privacy">
+      <section class="privacy-section policy-snapshot">
+        <h3>Privacy policy</h3>
+        <p class="scope-copy"><strong>Plain version:</strong> Cantarivo is designed to keep microphone and sound checks local to the device. This pilot does not record, transcribe, identify, sell, or upload microphone audio.</p>
+        <p class="scope-copy"><strong>Developer:</strong> Cantarivo Labs · <strong>App:</strong> Cantarivo · <strong>Play Store title:</strong> Cantarivo: Singing Companion.</p>
+        <p class="scope-copy"><strong>Formation status:</strong> Cantarivo Labs LLC is the intended legal entity name. It is not represented as an active LLC until a state accepts its formation filing.</p>
+        <div class="policy-link-grid">
+          <a href="privacy.html">Read full Privacy Policy</a>
+          <a href="data-safety.html">Read Data Safety review</a>
+          <a href="ai-vocal-companion.html">Read AI vocal activation form</a>
+        </div>
+        <p class="scope-copy">If a later release adds cloud AI singing, accounts, analytics, crash reporting, support chat hosting, or uploaded feedback, this policy and the Google Play disclosures must be updated before release.</p>
+      </section>
 
       <section class="privacy-section">
         <h3>Microphone</h3>
-        <p class="scope-copy"><strong>Local voice-level analysis only.</strong> This demo neither records nor uploads audio.</p>
+        <p class="scope-copy"><strong>Local sound and vocal-like signal analysis only.</strong> This demo neither records nor uploads audio. In the Android app, an active singing session can continue under other apps through a visible foreground-service notification.</p>
         <div class="setting-row">
           <div><strong>Current access</strong><span id="micAccessText">Not connected</span></div>
           <button class="small-button" id="micControlButton" type="button">Enable mic</button>
+        </div>
+        <div class="setting-row">
+          <div><strong>Background session status</strong><span id="backgroundDriveStatusText">Off until you start local listening</span></div>
+        </div>
+        <label class="setting-row setting-toggle">
+          <div><strong>Start local listening with my session</strong><span>After your first approval, starts automatically for each new singing session. Turn it off here anytime.</span></div>
+          <input id="autoListenCheckbox" type="checkbox" />
+        </label>
+        <label class="setting-row setting-toggle">
+          <div><strong>Resume after calls and interruptions</strong><span>Keeps the singing session open, pauses microphone and companion output, then restores listening after the call or competing microphone ends. Turn this off to require a manual resume.</span></div>
+          <input id="resumeAfterInterruptionsCheckbox" type="checkbox" />
+        </label>
+        <p class="scope-copy">The notification always offers Pause/Resume and End session. Cantarivo does not request call-log or phone-state access and cannot see who called.</p>
+      </section>
+
+      <section class="privacy-section appearance-section">
+        <h3>Session appearance</h3>
+        <p class="scope-copy">Choose a look anytime. Your choice stays on this device and changes only the colors and background; it never changes listening or privacy controls.</p>
+        <div class="theme-options" aria-label="Session appearance choices">
+          <button class="theme-option" type="button" data-drive-theme="original" aria-pressed="true">
+            <span class="theme-preview theme-preview-original" aria-hidden="true"></span>
+            <span><strong>Original</strong><small>Deep blue pilot look</small></span>
+          </button>
+          <button class="theme-option" type="button" data-drive-theme="aurora" aria-pressed="false">
+            <span class="theme-preview theme-preview-aurora" aria-hidden="true"></span>
+            <span><strong>Aurora</strong><small>Teal and blue night glow</small></span>
+          </button>
+          <button class="theme-option" type="button" data-drive-theme="sunset" aria-pressed="false">
+            <span class="theme-preview theme-preview-sunset" aria-hidden="true"></span>
+            <span><strong>Sunset</strong><small>Coral and gold horizon</small></span>
+          </button>
         </div>
       </section>
 
       <section class="privacy-section">
         <fieldset class="permission-options">
-          <legend>When a vocal moment is noticed</legend>
+          <legend>For this singing session</legend>
           <label class="radio-option">
             <input type="radio" name="companionPermission" value="ask" checked />
-            <span><strong>Ask me first</strong><small>The companion never joins on its own.</small></span>
+            <span><strong>Ask before joining</strong><small>The demo companion never joins on its own.</small></span>
           </label>
           <label class="radio-option">
             <input type="radio" name="companionPermission" value="drive" />
-            <span><strong>Allow for this drive</strong><small>It can join after a detected vocal moment until you end the drive.</small></span>
+            <span><strong>Allow for this session</strong><small>It can respond after a possible vocal-like moment until you end the session.</small></span>
           </label>
           <label class="radio-option">
             <input type="radio" name="companionPermission" value="never" />
-            <span><strong>Keep companion quiet</strong><small>Voice activity can be shown, but no joining prompts play.</small></span>
+            <span><strong>Keep demo companion quiet</strong><small>Activity can be shown, but it will not join or prompt you.</small></span>
           </label>
         </fieldset>
       </section>
 
-      <section class="privacy-section receipt-section">
-        <h3>Drive receipt</h3>
-        <p id="receiptText">No current drive. Nothing has been stored.</p>
-        <button class="text-button danger-text" id="clearDriveButton" type="button">Clear this drive’s activity</button>
+      <section class="privacy-section">
+        <h3>Wordless companion</h3>
+        <p class="scope-copy"><strong>Optional local synthetic harmony.</strong> When allowed for a session, it can play a brief non-lyrical tone after a possible vocal-like moment. It is not a human, artist, or cloned voice.</p>
+        <label class="setting-row setting-toggle">
+          <div><strong>Enable wordless harmony</strong><span>Requires Allow for this session and can be stopped immediately with Keep quiet or Silence / Stop.</span></div>
+          <input id="harmonyCheckbox" type="checkbox" />
+        </label>
+        <label class="setting-row setting-toggle">
+          <div><strong>Enable local AI vocal cues</strong><span>Uses an on-device wordless, voice-shaped cue engine. No lyrics, artist imitation, cloud audio, or voice cloning.</span></div>
+          <input id="aiVocalCheckbox" type="checkbox" />
+        </label>
       </section>
 
-      <p class="integration-note"><strong>Production integration:</strong> replace the demo adapters with a consented on-device classifier, licensed music data, and a licensed speech/singing service. Keep audio processing local where possible.</p>
+      <section class="privacy-section receipt-section">
+        <h3>Session receipt</h3>
+        <p id="receiptText">No current session. Nothing has been stored.</p>
+        <button class="text-button danger-text" id="clearDriveButton" type="button">Clear this session’s activity</button>
+      </section>
+
+      <p class="integration-note"><strong>Production integration:</strong> replace this demo only with an on-device, consented classifier and properly licensed music and singing services. Browser speech recognition is intentionally not used for this pilot because its audio-handling path may not stay on-device.</p>
+      <p class="integration-note"><strong>AI vocal status:</strong> no AI singer or cloud audio provider is active. Read the <a href="ai-vocal-companion.html">AI vocal activation form</a> and <a href="data-safety.html">Data Safety sheet</a> before enabling any AI vocal feature.</p>
+      </div>
+
+      <div class="settings-tab-panel" id="settingsPanelFaq" role="tabpanel" aria-labelledby="settingsTabFaq" data-settings-tab-panel="faq" hidden>
+        <section class="privacy-section">
+          <h3>Frequently Asked Questions</h3>
+          <p class="scope-copy">Answers for common tester, privacy, AI vocal, and launch-readiness questions. These are built into the app for offline review.</p>
+          <label class="faq-search-label" for="faqSearchInput">Search FAQs</label>
+          <input class="faq-search" id="faqSearchInput" type="search" placeholder="Try microphone, AI singer, privacy, lyrics, release..." autocomplete="off" />
+          <div class="faq-list" id="faqList" aria-live="polite"></div>
+        </section>
+      </div>
+
+      <div class="settings-tab-panel" id="settingsPanelContact" role="tabpanel" aria-labelledby="settingsTabContact" data-settings-tab-panel="contact" hidden>
+        <section class="privacy-section">
+          <h3>Contact</h3>
+          <p class="scope-copy"><strong>Cantarivo Labs support route:</strong> send privacy, safety, release, or tester feedback to <a href="mailto:drivercompanionsuppteam1@gmail.com">drivercompanionsuppteam1@gmail.com</a>. Do not send raw microphone audio, other people's audio, payment details, passwords, or private identity documents.</p>
+          <div class="contact-actions">
+            <a class="small-button contact-link" href="mailto:drivercompanionsuppteam1@gmail.com?subject=Cantarivo%20support%20request">Email support</a>
+            <a class="small-button contact-link" href="https://github.com/mexicanjumbalia/driver-companion/issues" rel="noopener noreferrer">GitHub issues</a>
+          </div>
+        </section>
+
+        <section class="privacy-section support-bot-card">
+          <h3>Support chatbot pilot</h3>
+          <p class="scope-copy">This is an offline helper for forward improvement and customer quality assurance. It answers from the built-in FAQ only. It does not send messages, upload audio, or replace emergency help.</p>
+          <div class="support-topic-buttons" aria-label="Quick support questions">
+            <button type="button" data-support-topic="microphone permission">Mic help</button>
+            <button type="button" data-support-topic="AI singer">AI singer</button>
+            <button type="button" data-support-topic="privacy policy">Privacy</button>
+            <button type="button" data-support-topic="release checklist">Release</button>
+          </div>
+          <form class="support-bot-form" id="supportBotForm">
+            <label for="supportBotInput">Ask the support helper</label>
+            <textarea id="supportBotInput" rows="3" placeholder="Example: Why does the app need the microphone?"></textarea>
+            <button class="primary-button compact" type="submit">Get answer</button>
+          </form>
+          <div class="support-bot-response" id="supportBotResponse" aria-live="polite">
+            Ask a question, or choose a quick topic above.
+          </div>
+          <button class="text-button" id="copySupportSummaryButton" type="button">Copy support summary</button>
+        </section>
+      </div>
     </aside>
     <div class="scrim" id="scrim" hidden></div>
 
     <dialog class="consent-dialog" id="microphoneDialog" aria-labelledby="microphoneTitle">
       <div class="dialog-icon" aria-hidden="true">◌</div>
       <p class="label">MICROPHONE REQUEST</p>
-      <h2 id="microphoneTitle">Let Driver Companion hear voice level for this drive?</h2>
-      <p>It will use your microphone in this browser to show a local sound level. This demo does not save, transcribe, identify, or upload audio.</p>
+        <h2 id="microphoneTitle">Allow a local sound-level check for this session?</h2>
+        <p>It will use your microphone on this device for a local sound-level check. On Android, the current singing session can stay active under other apps through an ongoing notification. Calls and competing microphone use pause listening and companion output. It does not save, transcribe, identify, or upload audio.</p>
       <div class="dialog-facts" aria-label="Microphone permission scope">
-        <span><strong>Scope</strong> Local sound-level meter</span>
-        <span><strong>Duration</strong> Until this drive ends</span>
+        <span><strong>Scope</strong> Local sound-level check</span>
+        <span><strong>Duration</strong> Until this session ends</span>
+        <span><strong>Background</strong> Visible ongoing session notification</span>
+        <span><strong>Storage</strong> None</span>
+      </div>
+      <label class="remember-option"><input id="rememberMicCheckbox" type="checkbox" /><span><strong>Start local listening automatically for later sessions</strong><small>Each session remains visible through an Android notification and ends when you choose End session. You can turn this off in Settings.</small></span></label>
+      <div class="dialog-actions">
+        <button class="secondary-button" id="declineMicButton" type="button">Not now</button>
+        <button class="primary-button compact" id="allowMicButton" type="button">Allow for this session</button>
+      </div>
+      <button class="dialog-emergency-stop" type="button" data-emergency-stop>Silence and stop everything</button>
+    </dialog>
+
+    <dialog class="consent-dialog" id="voiceConsentDialog" aria-labelledby="voiceConsentTitle">
+      <div class="dialog-icon" aria-hidden="true">●</div>
+      <p class="label">ANDROID VOICE PILOT</p>
+      <h2 id="voiceConsentTitle">Turn on one local voice command?</h2>
+      <p>Your device will listen once for exactly: Companion join, Companion quiet, End session, or Help. The app does not save audio or command text, and it does not use a cloud speech fallback.</p>
+      <div class="dialog-facts" aria-label="Voice command permission scope">
+        <span><strong>Scope</strong> One command</span>
+        <span><strong>Duration</strong> Up to 7 seconds</span>
         <span><strong>Storage</strong> None</span>
       </div>
       <div class="dialog-actions">
-        <button class="secondary-button" id="declineMicButton" type="button">Not now</button>
-        <button class="primary-button compact" id="allowMicButton" type="button">Allow for this drive</button>
+        <button class="secondary-button" id="declineVoiceButton" type="button">Not now</button>
+        <button class="primary-button compact" id="enableVoiceButton" type="button">Listen on this device</button>
       </div>
+      <button class="dialog-emergency-stop" type="button" data-emergency-stop>Silence and stop everything</button>
     </dialog>
 
-    <dialog class="consent-dialog" id="joinDialog" aria-labelledby="joinTitle">
+    <dialog class="consent-dialog" id="musicPlaytestDialog" aria-labelledby="musicPlaytestDialogTitle">
       <div class="dialog-icon music" aria-hidden="true">♫</div>
-      <p class="label">VOCAL MOMENT NOTICED</p>
-      <h2 id="joinTitle">Want a singing buddy for this drive?</h2>
-      <p>The demo detected voice activity. No music, artist, lyric, or song has been identified. You stay in control.</p>
-      <div class="dialog-actions stacked-actions">
-        <button class="primary-button compact" id="allowJoinDriveButton" type="button">Let companion join this drive</button>
-        <button class="secondary-button" id="keepQuietButton" type="button">Keep companion quiet</button>
+      <p class="label">LOCAL PLAYTEST AUDIO</p>
+      <h2 id="musicPlaytestDialogTitle">Start local music playback?</h2>
+      <p>This CC0 playtest track is stored in the app and will use your current phone or Bluetooth output. It does not identify music, send listening data, or start automatically. It will stop when you end the session or leave the app.</p>
+      <div class="dialog-facts" aria-label="Audio playtest scope">
+        <span><strong>Source</strong> CC0 preview track</span>
+        <span><strong>Output</strong> Your current device route</span>
+        <span><strong>Data</strong> No playback analytics</span>
       </div>
+      <div class="dialog-actions">
+        <button class="secondary-button" id="declineMusicPlaytestButton" type="button">Not now</button>
+        <button class="primary-button compact" id="allowMusicPlaytestButton" type="button">Play this track</button>
+      </div>
+      <button class="dialog-emergency-stop" type="button" data-emergency-stop>Silence and stop everything</button>
     </dialog>
 
     <div class="toast" id="toast" aria-live="polite" role="status" hidden></div>

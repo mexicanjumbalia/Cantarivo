@@ -6,7 +6,7 @@ Use this short form to organize a conversation before an attorney prepares the a
 
 | Topic | Discussion record |
 | --- | --- |
-| Project | Driver Companion / [specific product or pilot] |
+| Project | Cantarivo / [specific product or pilot] |
 | Project contact | drivercompanionsuppteam1@gmail.com |
 | Potential partner | [Legal name or entity, role, and authorized representative] |
 | Proposed asset | [Working title, version, and short description] |

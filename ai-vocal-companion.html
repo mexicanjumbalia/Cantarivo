@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#091A2C" />
+    <meta name="description" content="Draft AI vocal companion activation and consent form for Cantarivo." />
+    <title>AI Vocal Companion Review | Cantarivo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell support-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Return to Cantarivo">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M6 20.5V17a10 10 0 0 1 20 0v3.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" />
+              <path d="M4 20.5h5.5v4H7a3 3 0 0 1-3-3v-1Z M28 20.5h-5.5v4H25a3 3 0 0 0 3-3v-1Z" fill="currentColor" />
+              <path d="M16 8.5v10m0 0 3-2.2m-3 2.2-3-2.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span>cantarivo</span>
+        </a>
+        <a class="back-link" href="index.html">Back to the demo</a>
+      </header>
+
+      <main class="policy-page">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> LOCAL PROTOTYPE ACTIVE</p>
+        <h1>An AI voice,<br /><em>only by clear choice.</em></h1>
+        <p class="policy-meta">Review form · prepared August 1, 2026</p>
+
+        <section class="policy-content" aria-labelledby="aiStatusTitle">
+          <h2 id="aiStatusTitle">Current status</h2>
+          <p>Cantarivo now includes an optional <strong>local AI vocal cue</strong> prototype. It is a short, wordless, voice-shaped cue generated on the device after the user allows the companion for the current session. It does not include a human singer, voice clone, lyric generator, cloud audio service, or artist imitation.</p>
+
+          <h2>Recommended first AI-vocal path</h2>
+          <p>Keep the current on-device cue engine for the immediate preview, then build a small pack of original, rights-cleared, <strong>pre-rendered wordless AI vocal cues</strong>. The pack lives in the app, plays only after a person chooses it for the current session, never receives microphone audio, and is labelled as AI-generated. It is not a voice clone and must not imitate a recognizable performer.</p>
+          <p>This is a content-production and rights project before it is an in-app feature. Each cue needs documented source voice authorization, training-data/model rights, composition/master rights where applicable, performer consent, package checksum, and a stop/quiet control. The AI vocal roadmap is included in the repository review packet.</p>
+
+          <h2>Activation consent — draft wording</h2>
+          <p>Use this as a release review for the in-app local AI vocal cue setting. This page itself does not store a choice.</p>
+          <form aria-label="AI vocal companion activation consent form">
+            <fieldset class="permission-options">
+              <legend>Choose the default</legend>
+              <label class="radio-option">
+                <input type="radio" name="ai-vocal-choice" checked />
+                <span><strong>Keep AI vocal companion quiet</strong><small>No AI vocal audio plays. This is the default and can always remain selected.</small></span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="ai-vocal-choice" />
+                <span><strong>Allow local AI vocal cues for this session</strong><small>The current local cue engine, and later only preloaded rights-cleared wordless cues, may play after the existing companion permission is active. No microphone audio leaves the device.</small></span>
+              </label>
+            </fieldset>
+            <fieldset class="permission-options">
+              <legend>What the user must see before accepting</legend>
+              <label class="radio-option"><input type="checkbox" /><span><strong>What plays</strong><small>The exact cue pack and its AI-generated, non-artist nature are named.</small></span></label>
+              <label class="radio-option"><input type="checkbox" /><span><strong>What the app hears</strong><small>For the local-cue path, raw microphone audio stays on the phone and is discarded; it is not sent to an AI provider.</small></span></label>
+              <label class="radio-option"><input type="checkbox" /><span><strong>How long it lasts</strong><small>Permission lasts only for the current session and ends immediately with Keep quiet, Silence / Stop, or End session.</small></span></label>
+              <label class="radio-option"><input type="checkbox" /><span><strong>How to decline</strong><small>Declining leaves all button controls available and does not repeatedly prompt during the session.</small></span></label>
+            </fieldset>
+          </form>
+
+          <h2>Cloud or voice-conversion option</h2>
+          <p>Not approved for this project. A cloud AI singer or a system trained to sound like a person would change the privacy, rights, safety, and store-disclosure picture. It needs a named provider, a signed data-processing review, explicit user consent directly before activation, a revised Data Safety declaration, a revised privacy policy, and written authorization for every voice and musical asset. No such provider or voice model is integrated here.</p>
+
+          <h2>Consent and rights boundary</h2>
+          <p>The app must not activate companion output without an explicit session choice and must keep Silence / Stop and End session immediately accessible. The assistant must never claim to identify a person or song, or sing in a real person's voice without evidence and written authorization.</p>
+        </section>
+      </main>
+
+      <footer>
+        <span>CANTARIVO · AI VOCAL REVIEW</span>
+        <span><a href="privacy.html">Privacy policy</a> · <a href="data-safety.html">Data Safety review</a> · Draft only</span>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -4,7 +4,7 @@
 
 ## What this policy does
 
-Driver Companion's current source code is source-available under the [PolyForm Noncommercial License 1.0.0](../LICENSE). It allows noncommercial use, modification, and distribution on the license terms. Commercial use is not included in that public license; it would require a separate written agreement signed by the relevant rightsholder(s).
+Cantarivo's current source code is source-available under the [PolyForm Noncommercial License 1.0.0](../LICENSE). It allows noncommercial use, modification, and distribution on the license terms. Commercial use is not included in that public license; it would require a separate written agreement signed by the relevant rightsholder(s).
 
 This is intentionally **not** an OSI open-source license. The Open Source Definition requires a license not to restrict use in a business or other field of endeavor. See the [Open Source Initiative's definition](https://opensource.org/osd).
 

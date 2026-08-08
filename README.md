@@ -1,25 +1,47 @@
-# Driver Companion
+# Cantarivo
 
-> **Your road. Your voice. Your choice.**
+> **Their voices sing with you.**
 
-Driver Companion is a local-first, privacy-minded singing co-pilot for the moments when a traffic light becomes a spotlight. It lets drivers choose whether a companion may join a vocal moment—without collecting audio, identifying songs, or treating consent as a setting buried three screens deep.
+## A note to future creative partners
 
-This repository is a source-available **concept demo**. It intentionally contains **no third-party music, lyrics, backing tracks, vocal models, or music-recognition service**. The included demo uses a synthetic vocal moment and a local microphone-level meter only.
+Cantarivo is being built around a simple, generous idea: the distance between a fan and the music they love should feel smaller, more human, and more full of possibility. Every singer, producer, songwriter, publisher, recording studio, label, and technology partner brings a distinct piece of that possibility. Our aim is to honor that work while creating new, clearly consented ways for people to sing alongside the voices and musical worlds that move them.
+
+The project welcomes conversations with independent artists and established creative organizations alike. We are designing a rights-first home for artist-approved vocal experiences, transparent attribution, responsible metadata, and meaningful control over how a voice or recording may be used. The opportunity is not to replace the concert, the studio, or the artist—it is to extend the feeling of connection between those moments, with care for the people and craft behind every sound.
+
+If Cantarivo’s direction resonates with your studio, catalog, voice, or creative practice, we would be glad to hear what a thoughtful collaboration could look like. There is no required format or size of partner; the strongest future of singing companions will be shaped by many kinds of artists and builders moving together.
+
+## Version 0.2
+
+This release establishes the corrected general singing-companion experience and the extension points for future rights-cleared recognition and artist-library integrations. The integration layer is intentionally metadata-first: it may resolve a user-authorized track or asset reference, but it does not scrape, copy, download, or redistribute music, lyrics, recordings, stems, or voices.
+
+Cantarivo is a local-first, privacy-minded singing companion for moments when everyday listening becomes a chance to sing. It lets people choose whether a companion may join a vocal moment—without collecting audio, identifying songs, or treating consent as a setting buried three screens deep.
+
+| Brand field | Approved working value |
+| --- | --- |
+| Intended legal company | Cantarivo Labs LLC (formation pending) |
+| Public developer | Cantarivo Labs |
+| App | Cantarivo |
+| Play Store title | Cantarivo: Singing Companion |
+| Positioning line | Their voices sing with you. |
+
+Do not describe Cantarivo Labs LLC as an active legal entity until the selected state accepts its formation filing. The Android application ID remains `com.drivercompanion.pilot` for update compatibility; choose the permanent production application ID before the first Play Store release.
+
+This repository is a source-available **singing companion preview**. It includes five locally bundled, manually selected **CC0** playtest tracks; it contains no commercial-catalog music, vocal models, music-recognition service, lyrics display, or song-identification feature. The Android preview has a temporary local sound-level and heuristic vocal-like-moment gate, not a real singing classifier. With a separate per-session choice, it can play a brief local **wordless synthetic harmony tone**; it is not a human, artist, or cloned voice.
 
 ## The open-content promise
 
-Driver Companion will accept only audio assets that are explicitly dedicated under **CC0 1.0**. This is the most conservative practical route for a free, public project:
+Cantarivo will accept only audio assets that are explicitly dedicated under **CC0 1.0**. This is the most conservative practical route for a free, public project:
 
 - no music that is merely described as “royalty free”;
 - no commercial-catalog songs, lyrics, karaoke tracks, or cover recordings;
 - no CC-BY-NC, CC-BY-ND, CC-BY-SA, or other conditional audio licenses;
 - no asset is shipped until its composition and recording rights are both documented as CC0.
 
-The catalog is currently empty by design. Any future track must be listed in [`content/music-catalog.json`](content/music-catalog.json), pass the automated guard, and be recorded in [`NOTICE.md`](NOTICE.md). Read the full [Open Content Policy](docs/OPEN_CONTENT_POLICY.md) before proposing an asset.
+The release-ready catalog remains empty by design. The preview catalog contains five local CC0 playtest tracks, each with a source record and checksum; the remaining 95 entries are not bundled. Any future track must be listed in [`content/music-catalog.json`](content/music-catalog.json), pass the automated guard, and be recorded in [`NOTICE.md`](NOTICE.md). Read the full [Open Content Policy](docs/OPEN_CONTENT_POLICY.md) before proposing an asset.
 
 ## Explore the live site
 
-Driver Companion is available directly in a modern browser at [mexicanjumbalia.github.io/driver-companion](https://mexicanjumbalia.github.io/driver-companion/). No download, local setup, or special address is needed.
+Cantarivo is available directly in a modern browser at the project's current [GitHub Pages address](https://mexicanjumbalia.github.io/driver-companion/). No download, local setup, or special address is needed.
 
 ## Optional local preview
 
@@ -33,17 +55,45 @@ Then open [http://localhost:4184](http://localhost:4184) in a browser. This temp
 
 ## What it demonstrates
 
-- A parked-first, low-distraction drive setup.
-- Explicit, per-drive microphone consent for local sound-level analysis.
-- A plain-language companion choice: **Ask me first**, **Allow for this drive**, or **Keep companion quiet**.
-- Large manual controls to allow, silence, or end a drive immediately.
+- A simple singing-session setup with optional automatic local listening after Android permission is granted.
+- Explicit, per-session microphone consent for local sound-level analysis.
+- A plain-language companion choice: **Ask me first**, **Allow for this session**, or **Keep companion quiet**.
+- Large manual controls to allow, silence, or end a session immediately.
 - A synthetic “Simulate singing” control to test the permission flow without pretending to identify real singing, music, lyrics, artists, or songs.
+
+## Singing companion direction
+
+The preview is deliberately **button-first**: people can plainly allow the demo companion, keep it quiet, or end a singing session. Every companion decision expires when the session ends. The Android app uses a user-started foreground service for the active session, so local sound analysis can continue under other apps while an ongoing notification provides Pause/Resume and End session controls. Calls and higher-priority microphone use pause both analysis and the app's own companion cue; the same session resumes automatically only while the visible setting remains enabled. No phone-state or call-log permission is requested. The native, on-device signal gate sends the interface only an instantaneous numeric level, a narrow event, and an ephemeral coarsely rounded pitch. It never sends audio, a transcript, or a voiceprint and cannot distinguish the user from music, other people, or background noise. The separate one-command Android speech recognizer remains bounded, foreground-only, and has no cloud fallback or wake word. The browser demo remains foreground-only. See the [scope document](docs/PRIVATE_PILOT_SCOPE.md), [audio research and integration record](docs/OPEN_SOURCE_AUDIO_RESEARCH.md), [Android Studio handoff](docs/ANDROID_STUDIO_HANDOFF.md), the [native speech privacy and device test plan](docs/NATIVE_SPEECH_PRIVACY_AND_DEVICE_TEST_PLAN.md), and the [Android device setup guide](docs/ANDROID_PRIVATE_PILOT_DEVICE_SETUP.md).
+
+## Future recognition and artist-library integrations
+
+The [`integrations/recognition`](integrations/recognition/) folder is the controlled extension point for future song recognition, metadata resolution, artist-approved libraries, and voice-companion adapters. It includes provider contracts, an asset metadata schema, and a rights checklist. A future adapter may work with an official provider API or a direct partner feed from services such as Spotify, Apple Music, Speechify, a label, a studio, or an independent artist; it must not scrape consumer applications or infer permission from a match alone. No provider is integrated in version 0.2, and no protected catalog audio is bundled.
+
+## Android preview (Windows)
+
+The project now contains a locally buildable Capacitor Android app. Open the `android` folder in Android Studio after running `pnpm android:sync`; see [Android Studio handoff](docs/ANDROID_STUDIO_HANDOFF.md). After the project-local tools have been set up, build a debug APK with:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build-android-debug.ps1
+```
+
+Connect one owner-controlled Android phone with USB debugging approved, then use the deliberately confirmed installer:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-android-debug.ps1
+```
+
+It refuses to select among multiple devices and requires `INSTALL` before changing a phone. Follow the [device setup guide](docs/ANDROID_PRIVATE_PILOT_DEVICE_SETUP.md).
 
 ## Privacy and safety
 
-Audio is not recorded, transcribed, stored, or sent over the network by this demo. Set up while parked. The companion’s safe default is quiet until the driver chooses otherwise.
+Microphone audio is not recorded, transcribed, stored, or sent over the network by this demo. The five CC0 playtest tracks are static local app assets; playback produces no analytics and uses the device’s existing speaker or Bluetooth route. The companion’s default is quiet until the user chooses otherwise.
 
-This project is a design and engineering demo—not a safety-certified in-vehicle system or legal advice. A production release needs distraction testing, accessibility review, jurisdiction-specific privacy review, and rights clearance for every actual asset or service.
+Read the project&apos;s public [Privacy Policy](privacy.html), [legal review notes](docs/PRIVACY_LEGAL_REVIEW_NOTES.md), and [native speech privacy and device test plan](docs/NATIVE_SPEECH_PRIVACY_AND_DEVICE_TEST_PLAN.md) before adding a mobile voice feature. The policy distinguishes Cantarivo&apos;s no-recording, no-sale commitment from the separate privacy practices of operating systems, app stores, hosting, and funding providers.
+
+Before any public Google Play submission, review the draft [Data Safety sheet](data-safety.html), [foreground-service declaration draft](docs/ANDROID_FOREGROUND_SERVICE_DECLARATION_DRAFT.md), [AI vocal companion activation form](ai-vocal-companion.html), [AI vocal roadmap](docs/AI_VOCAL_COMPANION_ROADMAP.md), [Android AI vocal implementation plan](docs/ANDROID_AI_VOCAL_IMPLEMENTATION_PLAN.md), [finish-line task list](docs/FINISH_LINE_TASK_LIST.md), and [GitHub Pages privacy/support URL plan](docs/GITHUB_PAGES_PRIVACY_SUPPORT_PLAN.md). These are review materials only; the current AI vocal path is local wordless cue synthesis. No cloud AI singer, voice-cloning feature, or third-party audio provider is integrated or approved.
+
+This project is a design and engineering preview, not legal advice. A production release needs accessibility review, jurisdiction-specific privacy review, and rights clearance for every actual asset or service.
 
 ## Publishing as a free GitHub Pages project
 
@@ -51,7 +101,7 @@ The repository includes a GitHub Actions workflow ready to deploy this static de
 
 ## Project support
 
-[`donate.html`](donate.html) is a transparent, optional project-support page. The repository's native GitHub Sponsor button and the page's support button both open the project's [GitHub Sponsors profile](https://github.com/sponsors/mexicanjumbalia) in a new tab; Driver Companion does not collect payment information. Read the [Donations and Sponsorship policy](docs/DONATIONS_AND_SPONSORSHIP.md) before changing the funding setup. For project support, licensing, or collaboration inquiries, email [drivercompanionsuppteam1@gmail.com](mailto:drivercompanionsuppteam1@gmail.com).
+[`donate.html`](donate.html) is a transparent, optional project-support page. The repository's native GitHub Sponsor button and the page's support button both open the project's [GitHub Sponsors profile](https://github.com/sponsors/mexicanjumbalia) in a new tab; Cantarivo does not collect payment information. Read the [Donations and Sponsorship policy](docs/DONATIONS_AND_SPONSORSHIP.md) before changing the funding setup. For project support, licensing, or collaboration inquiries, email [drivercompanionsuppteam1@gmail.com](mailto:drivercompanionsuppteam1@gmail.com).
 
 ## Development checks
 
@@ -64,16 +114,26 @@ The check fails if a catalog entry is missing its provenance or is not CC0 for b
 ## Project map
 
 ```text
-Driver Companion/
+Cantarivo/
   app.js                         # Local microphone meter and synthetic demo flow
-  index.html                     # Accessible driver interface and consent dialogs
+  index.html                     # Accessible singing companion interface and consent dialogs
+  privacy.html                   # Public privacy policy for the demo and approved future voice design
   styles.css                     # Responsive visual design
-  content/music-catalog.json     # CC0-only catalog; empty until an asset is verified
+  content/music-catalog.json     # Release-ready catalog plus the bounded CC0 preview record
   docs/OPEN_CONTENT_POLICY.md    # Asset intake and licensing rules
   docs/MUSIC_COLLABORATION_FRAMEWORK.md # Partner-audio rights checklist
   docs/PRODUCER_VOCALIST_TERM_SHEET_TEMPLATE.md # Nonbinding partner discussion template
   docs/DONATIONS_AND_SPONSORSHIP.md # Safe funding activation policy
   docs/PROJECT_RIGHTS_AND_COMMERCIAL_LICENSING.md # Code/IP policy
+  docs/PRIVATE_PILOT_SCOPE.md      # Legacy-named scope file for session and native voice-command boundaries
+  docs/NATIVE_SPEECH_PRIVACY_AND_DEVICE_TEST_PLAN.md # Native speech privacy and physical-device test checklist
+  docs/ANDROID_PRIVATE_PILOT_DEVICE_SETUP.md # Owner-controlled Android installation and test checklist
+  docs/ANDROID_STUDIO_HANDOFF.md # Transfer and Android Studio setup guide
+  docs/OPEN_SOURCE_AUDIO_RESEARCH.md # Verified local-audio options and integration gates
+  integrations/recognition/         # Future metadata/recognition adapters and partner asset contracts
+  scripts/build-android-debug.ps1 # Reproducible low-memory Android debug build
+  scripts/install-android-debug.ps1 # Confirmed single-device preview installer
+  docs/PRIVACY_LEGAL_REVIEW_NOTES.md # Federal/state privacy issue-spotting and release-review gate
   scripts/validate-catalog.mjs   # Catalog compliance check
   .github/workflows/             # License guard and GitHub Pages deployment
   NOTICE.md                      # Third-party music and attribution record

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Privacy or personal-data question
+    url: mailto:drivercompanionsuppteam1@gmail.com
+    about: Do not post recordings, transcripts, location, phone numbers, or other personal information in a public issue.
+  - name: AI vocal companion and Data Safety review
+    url: https://mexicanjumbalia.github.io/driver-companion/ai-vocal-companion.html
+    about: Read the draft activation and disclosure materials before requesting a feature change.

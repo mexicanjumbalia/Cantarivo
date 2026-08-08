@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a non-sensitive problem with Cantarivo.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not include recordings, transcripts, passenger information, phone numbers, email addresses, exact locations, or other personal data. For privacy questions, use the contact link on the issue chooser instead.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the problem without including personal or sensitive information.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List safe, non-sensitive steps that let us reproduce the issue.
+    validations:
+      required: true
+  - type: input
+    id: build
+    attributes:
+      label: App or website version
+      description: For example, Android private pilot 1.0 or the public website date.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have not included recordings, transcripts, location, contact information, or other personal data.
+          required: true
