@@ -14,7 +14,7 @@ If Cantarivo’s direction resonates with your studio, catalog, voice, or creati
 
 This release establishes the corrected general singing-companion experience and the extension points for future rights-cleared recognition and artist-library integrations. The integration layer is intentionally metadata-first: it may resolve a user-authorized track or asset reference, but it does not scrape, copy, download, or redistribute music, lyrics, recordings, stems, or voices.
 
-Cantarivo is a local-first, privacy-minded singing companion for moments when everyday listening becomes a chance to sing. It lets people choose whether a companion may join a vocal moment—without collecting audio, identifying songs, or treating consent as a setting buried three screens deep.
+Cantarivo is a local-first, privacy-minded singing companion for moments when everyday listening becomes a chance to sing. It lets people choose whether a companion may join a vocal moment—without collecting audio, or treating consent as a setting buried three screens deep.
 
 | Brand field | Approved working value |
 | --- | --- |
