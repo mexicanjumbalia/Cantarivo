@@ -4,8 +4,8 @@ import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const manifest = await readFile(resolve(root, "android", "app", "src", "main", "AndroidManifest.xml"), "utf8");
-const plugin = await readFile(resolve(root, "android", "app", "src", "main", "java", "com", "drivercompanion", "preview", "DriverCompanionVoicePlugin.java"), "utf8");
-const service = await readFile(resolve(root, "android", "app", "src", "main", "java", "com", "drivercompanion", "preview", "DriverCompanionDriveService.java"), "utf8");
+const plugin = await readFile(resolve(root, "android", "app", "src", "main", "java", "com", "drivercompanion", "pilot", "DriverCompanionVoicePlugin.java"), "utf8");
+const service = await readFile(resolve(root, "android", "app", "src", "main", "java", "com", "drivercompanion", "pilot", "DriverCompanionDriveService.java"), "utf8");
 
 assert.match(manifest, /android\.permission\.RECORD_AUDIO/, "Android must declare microphone access for the explicit voice feature.");
 assert.match(manifest, /android\.speech\.RecognitionService/, "Android 11+ recognition-service visibility must be declared.");

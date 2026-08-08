@@ -20,7 +20,7 @@ if ($devices.Count -ne 1) {
 }
 
 Write-Output 'Ready to install the local preview debug build on one connected, owner-controlled Android phone.'
-Write-Output 'This is not a Play Store build. It is for stationary test testing only and asks for microphone access only when you explicitly choose one on-device command session.'
+Write-Output 'This is not a Play Store build. It is for stationary controlled testing only and asks for microphone access only when you explicitly choose one on-device command session.'
 $confirmation = Read-Host 'Type INSTALL to continue'
 if ($confirmation -cne 'INSTALL') {
   Write-Output 'Installation cancelled. No device changes were made.'
