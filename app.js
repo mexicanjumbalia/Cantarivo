@@ -10,10 +10,21 @@
  */
 
 const driveThemes = new Set(["original", "aurora", "sunset"]);
+const storageNamespace = "cantarivo";
+const legacyStorageNamespace = "driver-companion";
+
+function storageKey(name) {
+  return `${storageNamespace}-${name}`;
+}
+
+function legacyStorageKey(name) {
+  return `${legacyStorageNamespace}-${name}`;
+}
 
 function savedDriveTheme() {
   try {
-    const savedTheme = window.localStorage.getItem("driver-companion-drive-theme");
+    const savedTheme = window.localStorage.getItem(storageKey("drive-theme"))
+      ?? window.localStorage.getItem(legacyStorageKey("drive-theme"));
     return driveThemes.has(savedTheme) ? savedTheme : "original";
   } catch {
     return "original";
@@ -22,7 +33,8 @@ function savedDriveTheme() {
 
 function savedBooleanPreference(key, fallback = false) {
   try {
-    const saved = window.localStorage.getItem(key);
+    const saved = window.localStorage.getItem(key)
+      ?? window.localStorage.getItem(legacyStorageKey(key.replace(`${storageNamespace}-`, "")));
     return saved === null ? fallback : saved === "true";
   } catch {
     return fallback;
@@ -52,10 +64,10 @@ const state = {
   musicPlayer: null,
   playingMusicTrackId: null,
   driveTheme: savedDriveTheme(),
-  autoListenAtDriveStart: savedBooleanPreference("driver-companion-auto-listen"),
-  harmonyEnabled: savedBooleanPreference("driver-companion-wordless-harmony"),
-  aiVocalCuesEnabled: savedBooleanPreference("driver-companion-ai-vocal-cues"),
-  resumeAfterInterruptions: savedBooleanPreference("driver-companion-resume-after-interruptions", true),
+  autoListenAtDriveStart: savedBooleanPreference(storageKey("auto-listen")),
+  harmonyEnabled: savedBooleanPreference(storageKey("wordless-harmony")),
+  aiVocalCuesEnabled: savedBooleanPreference(storageKey("ai-vocal-cues")),
+  resumeAfterInterruptions: savedBooleanPreference(storageKey("resume-after-interruptions"), true),
   backgroundServiceActive: false,
   driveInterrupted: false,
   interruptionReason: "none",
@@ -340,7 +352,7 @@ function applyDriveTheme(theme, { announce = true } = {}) {
   });
   let savedOnDevice = false;
   try {
-    window.localStorage.setItem("driver-companion-drive-theme", theme);
+    window.localStorage.setItem(storageKey("drive-theme"), theme);
     savedOnDevice = true;
   } catch { /* Appearance remains active for this session. */ }
   if (announce) {
@@ -362,7 +374,7 @@ function saveBooleanPreference(key, value) {
 
 function setAutoListenAtDriveStart(enabled, { announce = true } = {}) {
   state.autoListenAtDriveStart = Boolean(enabled);
-  const saved = saveBooleanPreference("driver-companion-auto-listen", state.autoListenAtDriveStart);
+  const saved = saveBooleanPreference(storageKey("auto-listen"), state.autoListenAtDriveStart);
   updateDashboard();
   updateReceipt();
   if (announce) {
@@ -390,7 +402,7 @@ function syncNativeDriveOptions() {
 
 function setResumeAfterInterruptions(enabled, { announce = true } = {}) {
   state.resumeAfterInterruptions = Boolean(enabled);
-  const saved = saveBooleanPreference("driver-companion-resume-after-interruptions", state.resumeAfterInterruptions);
+  const saved = saveBooleanPreference(storageKey("resume-after-interruptions"), state.resumeAfterInterruptions);
   syncNativeDriveOptions();
   updateDashboard();
   updateReceipt();
@@ -405,7 +417,7 @@ function setResumeAfterInterruptions(enabled, { announce = true } = {}) {
 
 function setHarmonyEnabled(enabled, { announce = true } = {}) {
   state.harmonyEnabled = Boolean(enabled);
-  const saved = saveBooleanPreference("driver-companion-wordless-harmony", state.harmonyEnabled);
+  const saved = saveBooleanPreference(storageKey("wordless-harmony"), state.harmonyEnabled);
   if (!state.harmonyEnabled) stopSyntheticHarmony();
   if (state.harmonyEnabled) void ensureCompanionAudio();
   syncNativeDriveOptions();
@@ -422,7 +434,7 @@ function setHarmonyEnabled(enabled, { announce = true } = {}) {
 
 function setAiVocalCuesEnabled(enabled, { announce = true } = {}) {
   state.aiVocalCuesEnabled = Boolean(enabled);
-  const saved = saveBooleanPreference("driver-companion-ai-vocal-cues", state.aiVocalCuesEnabled);
+  const saved = saveBooleanPreference(storageKey("ai-vocal-cues"), state.aiVocalCuesEnabled);
   if (!state.aiVocalCuesEnabled) stopSyntheticHarmony();
   if (state.aiVocalCuesEnabled) void ensureCompanionAudio();
   syncNativeDriveOptions();
@@ -853,7 +865,7 @@ function openSettings(tab = "privacy", { pushHistory = true } = {}) {
   elements.settingsButton.setAttribute("aria-expanded", "true");
   elements.scrim.hidden = false;
   if (pushHistory && !state.settingsHistoryOpen && window.history?.pushState) {
-    window.history.pushState({ driverCompanionSettings: true }, "", window.location.href);
+    window.history.pushState({ cantarivoSettings: true }, "", window.location.href);
     state.settingsHistoryOpen = true;
   }
   const activeTab = elements.settingsTabButtons.find((button) => button.dataset.settingsTab === tab);

@@ -41,7 +41,7 @@ The release-ready catalog remains empty by design. The preview catalog contains 
 
 ## Explore the live site
 
-Cantarivo is available directly in a modern browser at the project's current [GitHub Pages address](https://mexicanjumbalia.github.io/driver-companion/). No download, local setup, or special address is needed.
+Cantarivo is available directly in a modern browser at the project's current [GitHub Pages address](https://mexicanjumbalia.github.io/Cantarivo/). No download, local setup, or special address is needed.
 
 ## Optional local preview
 

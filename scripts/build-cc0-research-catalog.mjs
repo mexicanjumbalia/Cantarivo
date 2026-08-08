@@ -27,7 +27,7 @@ const sources = [
 
 const fetchText = async (url) => {
   const response = await fetch(url, {
-    headers: { "user-agent": "DriverCompanionCatalogResearch/1.0 (rights documentation only)" },
+    headers: { "user-agent": "CantarivoCatalogResearch/1.0 (rights documentation only)" },
   });
   if (!response.ok) throw new Error(`${response.status} ${response.statusText} for ${url}`);
   return response.text();
