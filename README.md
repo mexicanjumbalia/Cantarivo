@@ -16,13 +16,6 @@ This release establishes the corrected general singing-companion experience and 
 
 Cantarivo is a local-first, privacy-minded singing companion for moments when everyday listening becomes a chance to sing. It lets people choose whether a companion may join a vocal moment—without collecting audio, or treating consent as a setting buried three screens deep.
 
-| Brand field | Approved working value |
-| --- | --- |
-| Intended legal company | Cantarivo Labs LLC (formation pending) |
-| Public developer | Cantarivo Labs |
-| App | Cantarivo |
-| Play Store title | Cantarivo: Singing Companion |
-| Positioning line | Their voices sing with you. |
 
 This repository is a source-available **singing companion preview**. It includes five locally bundled, manually selected **CC0** playtest tracks; it contains no commercial-catalog music, vocal models, music-recognition service, lyrics display, or song-identification feature. The Android preview has a temporary local sound-level and heuristic vocal-like-moment gate, not a real singing classifier. With a separate per-session choice, it can play a brief local **wordless synthetic harmony tone**; it is not a human, artist, or cloned voice.
 
