@@ -86,10 +86,6 @@ node scripts/build-public-site.mjs
 node scripts/scan-secrets.mjs
 ```
 
-The check fails if a catalog entry is missing its provenance or is not CC0 for both the musical composition and the sound recording.
-
-The release workflow runs browser, catalog, public-site, tracked-file secret, and dependency-audit checks. Read [Main-branch protection](docs/BRANCH_PROTECTION.md) before merging a release.
-
 ## Project map
 
 ```text
