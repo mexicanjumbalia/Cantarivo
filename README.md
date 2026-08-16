@@ -112,6 +112,4 @@ Cantarivo/
 
 ## License and commercial use
 
-The current source code is available under the [PolyForm Noncommercial License 1.0.0](LICENSE). It is source-available, but it is **not** OSI open source because commercial use is not granted. Commercial rights, if they are ever offered, require a separately signed agreement; see [Commercial Licensing](COMMERCIAL-LICENSE.md) and the [project rights policy](docs/PROJECT_RIGHTS_AND_COMMERCIAL_LICENSING.md).
-
-The repository's initial public version carried the MIT License. That earlier grant remains relevant to copies that were distributed with it; the present policy applies prospectively to later releases. Audio assets, if any are ever added, retain the individual rights status documented in the catalog and notice files; they are never silently relicensed as source code.
+The current source code is available under the [PolyForm Noncommercial License 1.0.0](LICENSE). It is source-available, but it is **not** OSI open source because commercial use is not granted.
